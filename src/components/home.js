@@ -4,6 +4,7 @@ import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.css'
 
 import OutShadowContainer from './outshadowcontainer'
+import SectionHeader from './sectionheader'
 import testImg from '../images/logo.svg'
 import './home.css'
 
@@ -28,21 +29,27 @@ function Home({history}){
     <div id='home'>
       <Swiper {...params}>
         <div className='padding-page'>
-          <h1>Hi {localStorage.getItem('username')}</h1>
+          <SectionHeader>
+            Tasks
+          </SectionHeader>
           <OutShadowContainer>
             <img src={testImg} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <button type='submit' className='submit-button' onClick={e => resetStorage(e)}>Reset</button>
         </div>
         <div className='padding-page'>
-          <h1>Hi {localStorage.getItem('username')}</h1>
+          <SectionHeader>
+            Hi {localStorage.getItem('username')}
+          </SectionHeader>
           <OutShadowContainer>
             <img src={testImg} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <button type='submit' className='submit-button' onClick={e => resetStorage(e)}>Reset</button>
         </div>
         <div className='padding-page'>
-          <h1>Hi {localStorage.getItem('username')}</h1>
+          <SectionHeader>
+            Habits
+          </SectionHeader>
           <OutShadowContainer>
             <img src={testImg} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
