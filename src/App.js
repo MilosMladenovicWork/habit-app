@@ -6,6 +6,7 @@ import 'swiper/css/swiper.css'
 import Header from './components/header'
 import OutShadowContainer from './components/outshadowcontainer'
 import InShadowContainer from './components/inshadowcontainer'
+import Home from './components/home'
 import './App.css'
 
 import welcomeImg from './images/logo.svg'
@@ -30,12 +31,6 @@ function App({history}) {
 
   function handleChange(e){
     setName(e.target.value)
-  }
-
-  function resetStorage(e){
-    e.preventDefault()
-    localStorage.clear()
-    history.push('/')
   }
 
   useEffect(() => {
@@ -86,13 +81,7 @@ function App({history}) {
         </div>
       </Swiper>
       }/>
-      <Route path='/home' render={() => 
-        <div>
-          Hello logged user
-          <button type='submit' className='submit-button' onClick={e => resetStorage(e)}>Reset</button>
-        </div>
-      }/>
-      
+      <Route path='/home' component={Home}/>
     </div>
   );
 }

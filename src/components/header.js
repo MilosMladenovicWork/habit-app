@@ -8,7 +8,7 @@ import './header.css'
 function Header(){
   return(
     <header>
-      <OutShadowContainer style={{marginTop:0}}>
+      <OutShadowContainer style={{marginTop:0, borderTopLeftRadius:0, borderTopLeftRadius:0}}>
         <img src={logo} alt='logo' id='logo'/>
       </OutShadowContainer>
     </header>
