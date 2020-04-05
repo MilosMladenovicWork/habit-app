@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  color:#303030;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  width:100vw;
+  background-color:#F0F1F6;
+  min-height:100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .introduction-image{
+  height:30vh;
+  display:block;
+  margin:auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App .introduction-page{
+  padding:0vh 12px 5vh;
 }
 
-.App-link {
-  color: #61dafb;
+.App .input-field{
+  width:100%;
+  border:none;
+  padding:12px;
+  background-color:#F0F1F6;
+  border-radius:10px 10px 10px 10px;
+  box-shadow:inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 1);
+  margin-bottom:25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .submit-button{
+  background:linear-gradient(#7DEEFF, #66B5E8);
+  border:none;
+  padding:12px;
+  background-color:#F0F1F6;
+  border-radius:10px 10px 10px 10px;
+  box-shadow:5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 1);
+  margin-left:auto;
+  display:block;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet{
+  background-color:#F0F1F6;
+  width:12px;
+  height:12px;
+  box-shadow:inset 1px 1px 0px rgba(0, 0, 0, 1), inset -1px -1px 0px rgba(255, 255, 255, 1);
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet-active{
+  background-color:#F0F1F6;
+  width:12px;
+  height:12px;
+  box-shadow:1px 1px 0px rgba(0, 0, 0, 0.4), -1px -1px 0px rgba(255, 255, 255, 1);
 }
