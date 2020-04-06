@@ -1,5 +1,15 @@
-.padding-page{
+#home .content{
+  height:100vh;
+  overflow-y:auto;
   padding:12px;
+  padding-bottom:35vh;
+}
+
+#home .title{
+  text-overflow: ellipsis;
+  width:200px;
+  white-space: nowrap;
+  overflow:hidden;
 }
 
 #home .swiper-pagination{

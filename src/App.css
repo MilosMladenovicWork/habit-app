@@ -16,7 +16,8 @@ h1{
 .App{
   width:100vw;
   background-color:#F0F1F6;
-  min-height:100vh;
+  height:100vh;
+  overflow-y:hidden;
 }
 
 .App .introduction-image{
