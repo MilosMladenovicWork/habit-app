@@ -7,9 +7,18 @@
 
 #home .title{
   text-overflow: ellipsis;
-  width:200px;
   white-space: nowrap;
   overflow:hidden;
+  width:70%;
+}
+
+#home .checkbox{
+  height:27px;
+}
+
+#home .checkbox svg{
+  height:100%;
+  width:auto;
 }
 
 #home .swiper-pagination{
