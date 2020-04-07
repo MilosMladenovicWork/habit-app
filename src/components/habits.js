@@ -6,12 +6,19 @@ import InputField from './inputfield'
 import Button from './button'
 import testImg from '../images/logo.svg'
 import testIcon from '../images/icon.svg'
+import card from '../images/card.svg'
+import mail from '../images/mail.svg'
 
+const icons = [
+  card,
+  mail
+]
 
 function Habits(){
 
   const [habits, setHabits] = useState([])
   const [habitTitle, setHabitTitle] = useState('')
+  const [selectedIcon, setSelectedIcon] = useState()
 
   function handleClick(e){
     let habitTitle = e.target.parentNode.parentNode.childNodes[1].innerHTML
@@ -25,6 +32,7 @@ function Habits(){
       localStorage.setItem('habits', JSON.stringify(newArray))
       return newArray
     })
+    setSelectedIcon()
   }
 
   function handleChange(e){
@@ -40,7 +48,7 @@ function Habits(){
       let newArray = [
         {
           title:habitTitle,
-          icon:testIcon,
+          icon:selectedIcon,
           completed:false
         },
         ...prevState
@@ -64,6 +72,11 @@ function Habits(){
     }
   }, [])
 
+  function handleIcon(e){
+    e.preventDefault()
+    setSelectedIcon(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
+  }
+
   return(
     <div>
       {habits.map((habit, index) => 
@@ -78,6 +91,17 @@ function Habits(){
             </div>
           </div>
         </OutShadowContainer>)}
+        <div style={{display:'flex'}}>
+          {
+            icons.map((icon, index) =>
+              <div style={{width:'fit-content'}} onClick={(e) => handleIcon(e)}>
+                <OutShadowContainer className={selectedIcon === icon ? 'in-shadow-container' : 'null'} key={index}>
+                  <img src={icon} style={{width:'27px'}}/>
+                </OutShadowContainer>
+              </div>
+            ) 
+          }
+        </div>
         <form action='#' metod='post'>
             <InputField type='text' name='title' placeholder='Title' value={habitTitle} onChange={(e) => handleChange(e)}/>
             <Button type='submit' className='button' onClick={(e) => handleSubmit(e)}>

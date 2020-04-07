@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="137.5" height="137" viewBox="0 0 137.5 137">
+  <g id="Group_72" data-name="Group 72" transform="translate(-148.9 -605)">
+    <g id="Email" transform="translate(-145 474.5)">
+      <rect id="Rectangle_26" data-name="Rectangle 26" width="137.5" height="79.8" transform="translate(293.9 178.8)" fill="#ffcf00"/>
+      <path id="Path_1" data-name="Path 1" d="M362.6,178.8H293.9l68.7,39.9,68.7-39.9Z" fill="#c1731a" fill-rule="evenodd"/>
+      <path id="Path_2" data-name="Path 2" d="M362.6,178.8H293.9l68.7-39.9,68.7,39.9Z" fill="#ffa700" fill-rule="evenodd"/>
+      <path id="Path_3" data-name="Path 3" d="M362.2,232h58.1a2.22,2.22,0,0,1,2.2,2.2h0a2.22,2.22,0,0,1-2.2,2.2H362.2a2.22,2.22,0,0,1-2.2-2.2h0a2.22,2.22,0,0,1,2.2-2.2Z" fill="#ff9600" fill-rule="evenodd"/>
+      <path id="Path_4" data-name="Path 4" d="M355.2,242.8h58.1a2.22,2.22,0,0,1,2.2,2.2h0a2.22,2.22,0,0,1-2.2,2.2H355.2A2.22,2.22,0,0,1,353,245h0a2.156,2.156,0,0,1,2.2-2.2Z" fill="#ff9600" fill-rule="evenodd"/>
+    </g>
+    <rect id="Rectangle_30" data-name="Rectangle 30" width="137" height="137" transform="translate(149 605)" fill="none"/>
+  </g>
+</svg>

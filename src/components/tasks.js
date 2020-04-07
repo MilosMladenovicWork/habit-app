@@ -5,13 +5,21 @@ import CheckBox from './checkbox'
 import Button from './button'
 import InputField from './inputfield'
 import testImg from '../images/logo.svg'
-import testIcon from '../images/icon.svg'
+import house from '../images/icon.svg'
+import card from '../images/card.svg'
+import mail from '../images/mail.svg'
+
+const icons = [
+  card,
+  mail
+]
 
 
 function Tasks(){
 
   const [tasks, setTasks] = useState([])
   const [taskTitle, setTaskTitle] = useState('')
+  const [selectedIcon, setSelectedIcon] = useState()
 
   function handleClick(e){
     let taskTitle = e.target.parentNode.parentNode.childNodes[1].innerHTML
@@ -40,7 +48,7 @@ function Tasks(){
       let newArray = [
         {
           title:taskTitle,
-          icon:testIcon,
+          icon:selectedIcon,
           completed:false
         },
         ...prevState
@@ -54,6 +62,7 @@ function Tasks(){
       return newArray
     })
     setTaskTitle('')
+    setSelectedIcon()
   }
 
   useEffect(() => {
@@ -64,6 +73,11 @@ function Tasks(){
     }
   }, [])
 
+  function handleIcon(e){
+    e.preventDefault()
+    console.log(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
+    setSelectedIcon(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
+  }
 
   return(
     <div>
@@ -86,6 +100,17 @@ function Tasks(){
             </div>
           </div>
         </OutShadowContainer>)}
+        <div style={{display:'flex'}}>
+          {
+            icons.map((icon, index) =>
+              <div style={{width:'fit-content'}} onClick={(e) => handleIcon(e)}>
+                <OutShadowContainer className={selectedIcon === icon ? 'in-shadow-container' : 'null'} key={index}>
+                  <img src={icon} style={{width:'27px'}}/>
+                </OutShadowContainer>
+              </div>
+            ) 
+          }
+        </div>
         <form action='#' metod='post'>
             <InputField type='text' name='title' value={taskTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
             <Button type='submit' className='button' onClick={(e) => handleSubmit(e)}>
