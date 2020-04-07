@@ -43,7 +43,6 @@ function Home({history}){
     on:{
       slideChange:function(){
         setBigButtonClicked(false)
-        
         if(this.activeIndex === 0 || this.activeIndex === 2){
           setDissapear(false)
         }else{

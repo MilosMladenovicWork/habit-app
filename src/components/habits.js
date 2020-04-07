@@ -106,6 +106,7 @@ function Habits(){
       )
       return newArray
     })
+    setSelectedHabit()
   }
 
   return(

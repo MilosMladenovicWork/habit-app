@@ -106,6 +106,7 @@ function Tasks(){
       )
       return newArray
     })
+    setSelectedTask()
   }
 
   return(
