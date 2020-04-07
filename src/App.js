@@ -37,6 +37,12 @@ function App({history}) {
     setName(e.target.value)
   }
 
+  useEffect(() => {
+    if(localStorage.getItem('username')){
+      history.push('/home')
+    }
+  }, [])
+
   return (
     <div className="App">
       <Header/>
