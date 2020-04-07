@@ -2,21 +2,9 @@ import React, {useState, useEffect} from 'react'
 
 import OutShadowContainer from './outshadowcontainer'
 import CheckBox from './checkbox'
-import Button from './button'
-import InputField from './inputfield'
-import BigButton from './bigbutton'
-import testImg from '../images/logo.svg'
-import house from '../images/icon.svg'
-import card from '../images/card.svg'
-import mail from '../images/mail.svg'
+import AddTaskForm from './addtaskform'
 
-const icons = [
-  card,
-  mail
-]
-
-
-function Tasks(){
+function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
 
   const [tasks, setTasks] = useState([])
   const [taskTitle, setTaskTitle] = useState('')
@@ -66,6 +54,7 @@ function Tasks(){
     })
     setTaskTitle('')
     setSelectedIcon()
+    setBigButtonClicked(false)
   }
 
   useEffect(() => {
@@ -84,11 +73,13 @@ function Tasks(){
   function handleSelectTask(e){
     e.preventDefault()
     setSelectedTask(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setBigButtonClicked(true)
   }
 
   function deselectTask(e){
     e.preventDefault()
     setSelectedTask()
+    setBigButtonClicked(false)
   }
 
   function deleteTask(e){
@@ -107,6 +98,7 @@ function Tasks(){
       return newArray
     })
     setSelectedTask()
+    setBigButtonClicked(false)
   }
 
   return(
@@ -132,36 +124,19 @@ function Tasks(){
             </div>
           </div>
         </OutShadowContainer>)}
-        <div style={{display:'flex'}}>
-          {
-            icons.map((icon, index) =>
-              <div style={{width:'fit-content'}} onClick={(e) => handleIcon(e)}>
-                <OutShadowContainer className={selectedIcon === icon ? 'in-shadow-container' : null} key={index}>
-                  <img src={icon} style={{width:'27px'}}/>
-                </OutShadowContainer>
-              </div>
-            ) 
-          }
-        </div>
-        <form action='#' metod='post'>
-            <InputField type='text' name='title' value={taskTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
-            <Button className='button' onClick={(e) => handleSubmit(e)}>
-              Create Task
-            </Button>
-            <Button className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('tasks');setTasks([])}}>
-              Reset Tasks
-            </Button>
-            {selectedTask &&
-            <>
-            <Button className='button' onClick={(e) => deselectTask(e)}>
-              Deselect Task
-            </Button>
-            <Button className='button' onClick={(e) => deleteTask(e)}>
-              Delete Task
-            </Button>
-            </>
-          }
-        </form>
+        <AddTaskForm
+          handleIcon={(e) => handleIcon(e)}
+          selectedIcon={selectedIcon}
+          taskTitle={taskTitle}
+          handleChange={e => handleChange(e)}
+          handleSubmit={e => handleSubmit(e)}
+          setTasks={e => setTasks(e)}
+          selectedTask={selectedTask}
+          deselectTask={e => deselectTask(e)}
+          deleteTask={e => deleteTask(e)}
+          clickedButton={clickedButton}
+          currentSlide={currentSlide}
+        />
     </div>
   )
 }

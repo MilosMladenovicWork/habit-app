@@ -20,6 +20,7 @@ function Home({history}){
 
   const [dissappear, setDissapear] = useState(true)
   const [bigButtonClicked, setBigButtonClicked] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(1)
 
   const spring = useSpring({to:[
     {display:dissappear ? 'inline-block' : 'inline-block'},
@@ -30,8 +31,6 @@ function Home({history}){
       transform:bigButtonClicked ? 'translate(-50%) rotate(45deg)' : 'translate(-50%) rotate(0deg)',
     }
   ]})
-
-  console.log(bigButtonClicked)
   
   const params = {
     pagination:{
@@ -42,6 +41,7 @@ function Home({history}){
     initialSlide:1,
     on:{
       slideChange:function(){
+        setCurrentSlide(this.activeIndex)
         setBigButtonClicked(false)
         if(this.activeIndex === 0 || this.activeIndex === 2){
           setDissapear(false)
@@ -70,7 +70,11 @@ function Home({history}){
             Tasks
           </SectionHeader>
           <div className='content'>
-            <Tasks/>
+            <Tasks 
+              currentSlide={currentSlide}
+              clickedButton={bigButtonClicked}
+              setBigButtonClicked={setBigButtonClicked} 
+              />
           </div>
         </div>
         <div>
@@ -91,7 +95,11 @@ function Home({history}){
             Habits
           </SectionHeader>
           <div className='content'>
-            <Habits/>
+            <Habits 
+              currentSlide={currentSlide}
+              clickedButton={bigButtonClicked} 
+              setBigButtonClicked={setBigButtonClicked}  
+            />
           </div>
         </div>
       </Swiper>

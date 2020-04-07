@@ -1,0 +1,12 @@
+.creation-popup{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translate(-50%, 0);
+  padding-left:12px;
+  padding-right:12px;
+  width:calc(100% - 24px);
+  max-height:51.5vh;
+  transition:0.35s;
+  overflow-y:auto
+}

@@ -2,19 +2,9 @@ import React, {useState, useEffect} from 'react'
 
 import OutShadowContainer from './outshadowcontainer'
 import CheckBox from './checkbox'
-import InputField from './inputfield'
-import Button from './button'
-import testImg from '../images/logo.svg'
-import testIcon from '../images/icon.svg'
-import card from '../images/card.svg'
-import mail from '../images/mail.svg'
+import AddHabitForm from './addhabitform'
 
-const icons = [
-  card,
-  mail
-]
-
-function Habits(){
+function Habits({currentSlide, clickedButton, setBigButtonClicked}){
 
   const [habits, setHabits] = useState([])
   const [habitTitle, setHabitTitle] = useState('')
@@ -65,6 +55,7 @@ function Habits(){
     })
     setHabitTitle('')
     setSelectedIcon()
+    setBigButtonClicked(false)
   }
 
   useEffect(() => {
@@ -84,11 +75,13 @@ function Habits(){
   function handleSelectHabit(e){
     e.preventDefault()
     setSelectedHabit(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setBigButtonClicked(true)
   }
 
   function deselectHabit(e){
     e.preventDefault()
     setSelectedHabit()
+    setBigButtonClicked(false)
   }
 
   function deleteHabit(e){
@@ -107,7 +100,14 @@ function Habits(){
       return newArray
     })
     setSelectedHabit()
+    setBigButtonClicked(false)
   }
+
+  useEffect(() => {
+    if(!clickedButton){
+      setSelectedHabit()
+    }
+  }, [clickedButton])
 
   return(
     <div>
@@ -127,36 +127,19 @@ function Habits(){
             </div>
           </div>
         </OutShadowContainer>)}
-        <div style={{display:'flex'}}>
-          {
-            icons.map((icon, index) =>
-              <div style={{width:'fit-content'}} onClick={(e) => handleIcon(e)}>
-                <OutShadowContainer className={selectedIcon === icon ? 'in-shadow-container' : 'null'} key={index}>
-                  <img src={icon} style={{width:'27px'}}/>
-                </OutShadowContainer>
-              </div>
-            ) 
-          }
-        </div>
-        <form action='#' metod='post'>
-            <InputField type='text' name='title' placeholder='Title' value={habitTitle} onChange={(e) => handleChange(e)}/>
-            <Button type='submit' className='button' onClick={(e) => handleSubmit(e)}>
-              Create Habit
-            </Button>
-            <Button type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([])}}>
-              Reset Habits
-            </Button>
-            {selectedHabit &&
-            <>
-            <Button className='button' onClick={(e) => deselectHabit(e)}>
-              Deselect Habit
-            </Button>
-            <Button className='button' onClick={(e) => deleteHabit(e)}>
-              Delete Habit
-            </Button>
-            </>
-          }
-        </form>
+        <AddHabitForm
+          handleIcon={(e) => handleIcon(e)}
+          selectedIcon={selectedIcon}
+          habitTitle={habitTitle}
+          handleChange={e => handleChange(e)}
+          handleSubmit={e => handleSubmit(e)}
+          setHabits={e => setHabits(e)}
+          selectedHabit={selectedHabit}
+          deselectHabit={e => deselectHabit(e)}
+          deleteHabit={e => deleteHabit(e)}
+          clickedButton={clickedButton}
+          currentSlide={currentSlide}
+        />
     </div>
   )
 }
