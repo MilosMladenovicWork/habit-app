@@ -30,27 +30,6 @@ h1{
   padding:0vh 12px 5vh;
 }
 
-.App .input-field{
-  width:100%;
-  border:none;
-  padding:12px;
-  background-color:#F0F1F6;
-  border-radius:10px 10px 10px 10px;
-  box-shadow:inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 1);
-  margin-bottom:25px;
-}
-
-.App .submit-button{
-  background:linear-gradient(#7DEEFF, #66B5E8);
-  border:none;
-  padding:12px;
-  background-color:#F0F1F6;
-  border-radius:10px 10px 10px 10px;
-  box-shadow:5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 1);
-  margin-left:auto;
-  display:block;
-}
-
 .swiper-container .swiper-pagination .swiper-pagination-bullet{
   background-color:#F0F1F6;
   width:12px;

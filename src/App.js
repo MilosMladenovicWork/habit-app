@@ -7,6 +7,8 @@ import Header from './components/header'
 import OutShadowContainer from './components/outshadowcontainer'
 import InShadowContainer from './components/inshadowcontainer'
 import Home from './components/home'
+import Button from './components/button'
+import InputField from './components/inputfield'
 import './App.css'
 
 import welcomeImg from './images/logo.svg'
@@ -75,8 +77,10 @@ function App({history}) {
             <img src={welcomeImg} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <form action='#' method='POST'>   
-            <input type='text' name='name' placeholder='Name' className='input-field' onChange={e => handleChange(e)}/>
-            <button type='submit' className='submit-button' onClick={e => handleClick(e)}>Confirm</button>
+            <InputField type='text' name='name' placeholder='Name' className='input-field' onChange={e => handleChange(e)}/>
+            <Button type='submit' className='button' onClick={e => handleClick(e)}>
+              Confirm
+            </Button>
           </form>
         </div>
       </Swiper>

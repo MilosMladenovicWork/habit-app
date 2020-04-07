@@ -7,6 +7,7 @@ import OutShadowContainer from './outshadowcontainer'
 import SectionHeader from './sectionheader'
 import Tasks from './tasks'
 import Habits from './habits'
+import Button from './button'
 import testImg from '../images/logo.svg'
 import './home.css'
 
@@ -28,7 +29,6 @@ function Home({history}){
   }
 
 
-
   return(
     <div id='home'>
       <Swiper {...params}>
@@ -48,7 +48,9 @@ function Home({history}){
             <OutShadowContainer>
               <img src={testImg} alt='Welcome' className='introduction-image'/>
             </OutShadowContainer>
-            <button type='submit' className='submit-button' onClick={e => resetStorage(e)}>Reset</button>
+            <Button type='submit' className='button' onClick={e => resetStorage(e)}>
+              Reset Storage
+            </Button>
           </div>
         </div>
         <div>

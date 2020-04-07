@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Checkbox({completed}){
-  console.log(completed)
   return(
     <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
       <g id="Group_69" data-name="Group 69" transform="translate(-580 -1070)">
