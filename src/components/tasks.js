@@ -11,7 +11,7 @@ import testIcon from '../images/icon.svg'
 function Tasks(){
 
   const [tasks, setTasks] = useState([])
-  const [taskTitle, setTaskTitle] = useState()
+  const [taskTitle, setTaskTitle] = useState('')
 
   function handleClick(e){
     let taskTitle = e.target.parentNode.parentNode.childNodes[1].innerHTML
@@ -53,6 +53,7 @@ function Tasks(){
       )
       return newArray
     })
+    setTaskTitle('')
   }
 
   useEffect(() => {
@@ -86,7 +87,7 @@ function Tasks(){
           </div>
         </OutShadowContainer>)}
         <form action='#' metod='post'>
-            <InputField type='text' name='title' placeholder='Title' onChange={(e) => handleChange(e)}/>
+            <InputField type='text' name='title' value={taskTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
             <Button type='submit' className='button' onClick={(e) => handleSubmit(e)}>
               Create Task
             </Button>

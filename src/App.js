@@ -8,6 +8,7 @@ import OutShadowContainer from './components/outshadowcontainer'
 import InShadowContainer from './components/inshadowcontainer'
 import Home from './components/home'
 import Button from './components/button'
+import ProtectedRoute from './components/protectedroute'
 import InputField from './components/inputfield'
 import './App.css'
 
@@ -23,23 +24,18 @@ const params = {
 
 function App({history}) {
 
-  const [name, setName] = useState()
+  const [name, setName] = useState('')
 
   function handleClick(e){
     e.preventDefault()
     localStorage.setItem('username', name)
+    setName('')
     history.push('/home')
   }
 
   function handleChange(e){
     setName(e.target.value)
   }
-
-  useEffect(() => {
-    if(localStorage.getItem('username') !== null){
-      history.push('/home')
-    }
-  }, [])
 
   return (
     <div className="App">
@@ -77,7 +73,7 @@ function App({history}) {
             <img src={welcomeImg} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <form action='#' method='POST'>   
-            <InputField type='text' name='name' placeholder='Name' className='input-field' onChange={e => handleChange(e)}/>
+            <InputField type='text' name='name' value={name} placeholder='Name' className='input-field' onChange={e => handleChange(e)}/>
             <Button type='submit' className='button' onClick={e => handleClick(e)}>
               Confirm
             </Button>
@@ -85,7 +81,7 @@ function App({history}) {
         </div>
       </Swiper>
       }/>
-      <Route path='/home' component={Home}/>
+      <ProtectedRoute authenticated={name} path='/home' component={Home}/>
     </div>
   );
 }

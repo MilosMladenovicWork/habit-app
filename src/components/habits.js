@@ -1,76 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import OutShadowContainer from './outshadowcontainer'
 import CheckBox from './checkbox'
+import InputField from './inputfield'
+import Button from './button'
 import testImg from '../images/logo.svg'
 import testIcon from '../images/icon.svg'
 
-const habitsArray = [
-  {
-    title:'Sample text here. Sample text her',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Sample text here',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Sample text here.',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Sample text heaaaaaaaaaaaaa aaaaaaaaaaaaa a',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. ',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Sample tet here.',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Sample here.',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Samt here.',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Sample tt here.',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Sple text here.',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. Samle text here.',
-    icon:testIcon,
-    completed:false
-  },
-  {
-    title:'Sample text here. ample text here.',
-    icon:testIcon,
-    completed:false
-  }
-]
 
 function Habits(){
 
-  const [habits, setHabits] = useState(habitsArray)
+  const [habits, setHabits] = useState([])
+  const [habitTitle, setHabitTitle] = useState('')
 
   function handleClick(e){
     let habitTitle = e.target.parentNode.parentNode.childNodes[1].innerHTML
@@ -81,9 +22,47 @@ function Habits(){
           habit.completed = !habit.completed 
         }
       })
+      localStorage.setItem('habits', JSON.stringify(newArray))
       return newArray
     })
   }
+
+  function handleChange(e){
+    let inputValue = e.target.value
+    setHabitTitle(() => {
+      return inputValue
+    })
+  }
+
+  function handleSubmit(e){
+    e.preventDefault()
+    setHabits((prevState) => {
+      let newArray = [
+        {
+          title:habitTitle,
+          icon:testIcon,
+          completed:false
+        },
+        ...prevState
+      ]
+
+      localStorage.setItem('habits', 
+        JSON.stringify(
+          newArray
+        )  
+      )
+      return newArray
+    })
+    setHabitTitle('')
+  }
+
+  useEffect(() => {
+    if(JSON.parse(localStorage.getItem('habits'))){
+      setHabits(
+        JSON.parse(localStorage.getItem('habits'))
+      )
+    }
+  }, [])
 
   return(
     <div>
@@ -99,6 +78,15 @@ function Habits(){
             </div>
           </div>
         </OutShadowContainer>)}
+        <form action='#' metod='post'>
+            <InputField type='text' name='title' placeholder='Title' value={habitTitle} onChange={(e) => handleChange(e)}/>
+            <Button type='submit' className='button' onClick={(e) => handleSubmit(e)}>
+              Create Habit
+            </Button>
+            <Button type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([])}}>
+              Reset Habits
+            </Button>
+        </form>
     </div>
   )
 }

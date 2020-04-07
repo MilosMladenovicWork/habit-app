@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Redirect} from 'react-router-dom'
 import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.css'
 
@@ -27,7 +27,6 @@ function Home({history}){
     localStorage.clear()
     history.push('/')
   }
-
 
   return(
     <div id='home'>
