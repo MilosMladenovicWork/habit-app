@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {animated, useSpring} from 'react-spring'
 
 import OutShadowContainer from './outshadowcontainer'
@@ -24,6 +24,8 @@ function AddTaskForm({
   currentSlide
 }){
 
+  const [message, setMessage] = useState('')
+
   const spring = useSpring({to:[
     {
       opacity:clickedButton && currentSlide === 2 ? 1 : 1
@@ -38,6 +40,27 @@ function AddTaskForm({
   config:{tension:1000, mass:1, friction:40}
   })
 
+  function titleExist(currentTitle){
+    if(localStorage.getItem('habits')){
+      return !!JSON.parse(localStorage.getItem('habits')).filter(habit => habit.title === currentTitle)[0]
+    }
+    return false
+  }
+  
+  function validateFields(e){
+    e.preventDefault()
+    if(!habitTitle){
+      return setMessage('Habit title should not be blank!')
+    }else if(titleExist(habitTitle)){
+      return setMessage('Habit with same title already exists!')
+    }else if(!selectedIcon){
+      return setMessage('Please select habit icon!')
+    }else{
+      setMessage()
+    }
+    handleSubmit(e)
+  }
+
   return(
     <AnimatedOutShadowContainer
       className='creation-popup'
@@ -49,7 +72,12 @@ function AddTaskForm({
       />
       <form action='#' metod='post'>
           <InputField type='text' name='title' placeholder='Title' value={habitTitle} onChange={(e) => handleChange(e)}/>
-          <Button type='submit' className='button' onClick={(e) => handleSubmit(e)}>
+          {message &&
+            <OutShadowContainer>
+              {message}
+            </OutShadowContainer>
+          }
+          <Button type='submit' className='button' onClick={(e) => validateFields(e)}>
             Create Habit
           </Button>
           <Button type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([])}}>

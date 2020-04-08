@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {animated, useSpring} from 'react-spring'
 
 import OutShadowContainer from './outshadowcontainer'
@@ -22,6 +22,8 @@ function AddTaskForm({
   currentSlide
 }){
 
+  const [message, setMessage] = useState('')
+
   const spring = useSpring({to:[
     {
       opacity:clickedButton && currentSlide === 0 ? 1 : 1
@@ -36,6 +38,27 @@ function AddTaskForm({
   config:{tension:1000, mass:1, friction:40}
 })
 
+function titleExist(currentTitle){
+  if(localStorage.getItem('tasks')){
+    return !!JSON.parse(localStorage.getItem('tasks')).filter(task => task.title === currentTitle)[0]
+  }
+  return false
+}
+
+function validateFields(e){
+  e.preventDefault()
+  if(!taskTitle){
+    return setMessage('Task title should not be blank!')
+  }else if(titleExist(taskTitle)){
+    return setMessage('Task with same title already exists!')
+  }else if(!selectedIcon){
+    return setMessage('Please select task icon!')
+  }else{
+    setMessage()
+  }
+  handleSubmit(e)
+}
+
   return(
     <AnimatedOutShadowContainer 
       className='creation-popup'
@@ -47,7 +70,15 @@ function AddTaskForm({
       />
       <form action='#' metod='post'>
           <InputField type='text' name='title' value={taskTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
-          <Button className='button' onClick={(e) => handleSubmit(e)}>
+          {message &&
+            <OutShadowContainer>
+              {message}
+            </OutShadowContainer>
+          }
+          <Button 
+            className='button' 
+            onClick={(e) => validateFields(e)}
+          >
             Create Task
           </Button>
           <Button className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('tasks');setTasks([])}}>
