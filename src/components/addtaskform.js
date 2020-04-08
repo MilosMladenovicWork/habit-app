@@ -19,6 +19,7 @@ function AddTaskForm({
   deselectTask,
   deleteTask,
   clickedButton,
+  setClickedButton,
   currentSlide
 }){
 
@@ -47,7 +48,7 @@ function titleExist(currentTitle){
 
 function validateFields(e){
   e.preventDefault()
-  if(!taskTitle){
+  if(!taskTitle.trim()){
     return setMessage('Task title should not be blank!')
   }else if(titleExist(taskTitle)){
     return setMessage('Task with same title already exists!')
@@ -81,7 +82,7 @@ function validateFields(e){
           >
             Create Task
           </Button>
-          <Button className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('tasks');setTasks([])}}>
+          <Button className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('tasks');setTasks([]);setClickedButton(false)}}>
             Reset Tasks
           </Button>
           {selectedTask &&

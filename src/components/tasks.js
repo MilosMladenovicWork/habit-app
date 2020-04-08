@@ -38,7 +38,7 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
     setTasks((prevState) => {
       let newArray = [
         {
-          title:taskTitle,
+          title:taskTitle.trim(),
           icon:selectedIcon,
           completed:false
         },
@@ -135,6 +135,7 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
           deselectTask={e => deselectTask(e)}
           deleteTask={e => deleteTask(e)}
           clickedButton={clickedButton}
+          setClickedButton={e => setBigButtonClicked(e)}
           currentSlide={currentSlide}
         />
     </div>

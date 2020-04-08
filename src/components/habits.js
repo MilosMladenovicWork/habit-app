@@ -39,7 +39,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
     setHabits((prevState) => {
       let newArray = [
         {
-          title:habitTitle,
+          title:habitTitle.trim(),
           icon:selectedIcon,
           completed:false
         },
@@ -138,6 +138,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
           deselectHabit={e => deselectHabit(e)}
           deleteHabit={e => deleteHabit(e)}
           clickedButton={clickedButton}
+          setClickedButton={e => setBigButtonClicked(e)}
           currentSlide={currentSlide}
         />
     </div>

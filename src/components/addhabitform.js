@@ -21,6 +21,7 @@ function AddTaskForm({
   deselectHabit,
   deleteHabit,
   clickedButton,
+  setClickedButton,
   currentSlide
 }){
 
@@ -49,7 +50,7 @@ function AddTaskForm({
   
   function validateFields(e){
     e.preventDefault()
-    if(!habitTitle){
+    if(!habitTitle.trim()){
       return setMessage('Habit title should not be blank!')
     }else if(titleExist(habitTitle)){
       return setMessage('Habit with same title already exists!')
@@ -80,7 +81,7 @@ function AddTaskForm({
           <Button type='submit' className='button' onClick={(e) => validateFields(e)}>
             Create Habit
           </Button>
-          <Button type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([])}}>
+          <Button type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([]); setClickedButton(false)}}>
             Reset Habits
           </Button>
           {selectedHabit &&
