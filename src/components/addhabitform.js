@@ -12,12 +12,16 @@ const AnimatedOutShadowContainer = animated(OutShadowContainer)
 function AddTaskForm(props){
   let {clickedButton, currentSlide} = props
 
-  const spring = useSpring({to:[
+  const spring = useSpring({
+    from:{
+      transform: clickedButton && currentSlide === 2 ? 'translate(-50%, 0) scale(0)' : 'translate(-50%, 0) scale(1)'
+    },
+    to:[
     {
       opacity:clickedButton && currentSlide === 2 ? 1 : 1
     },
     {
-      transform:clickedButton && currentSlide === 2 ? 'translate(-50%, 0)' : 'translate(100%, 0)'
+      transform:clickedButton && currentSlide === 2 ? 'translate(-50%, 0) scale(1)' : 'translate(-50%, 0) scale(0)'
     },
     {
       opacity:clickedButton && currentSlide === 2 ? 1 : 0

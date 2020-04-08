@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react'
 import OutShadowContainer from './outshadowcontainer'
 import CheckBox from './checkbox'
 import AddTaskForm from './addtaskform'
-import BigButton from './bigbutton'
 
 function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
 

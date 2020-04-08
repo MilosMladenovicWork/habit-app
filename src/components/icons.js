@@ -3,10 +3,18 @@ import React from 'react'
 import OutShadowContainer from './outshadowcontainer'
 import card from '../images/card.svg'
 import mail from '../images/mail.svg'
+import diamond from '../images/diamond.svg'
+import megalophone from '../images/megalophone.svg'
+import earth from '../images/earth.svg'
+import news from '../images/news.svg'
 
 const icons = [
   card,
-  mail
+  mail,
+  diamond,
+  megalophone,
+  earth,
+  news
 ]
 
 function Icons({
