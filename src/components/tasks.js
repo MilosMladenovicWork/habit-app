@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import OutShadowContainer from './outshadowcontainer'
 import CheckBox from './checkbox'
 import AddTaskForm from './addtaskform'
+import BigButton from './bigbutton'
 
 function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
 
@@ -73,6 +74,8 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
   function handleSelectTask(e){
     e.preventDefault()
     setSelectedTask(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setTaskTitle(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setSelectedIcon(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
     setBigButtonClicked(true)
   }
 
@@ -101,6 +104,14 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
     setBigButtonClicked(false)
   }
 
+  useEffect(() => {
+    if(!clickedButton){
+      setSelectedIcon()
+      setSelectedTask()
+      setTaskTitle('')
+    }
+  }, [clickedButton])
+
   return(
     <div>
       {tasks.map((task, index) => 
@@ -127,7 +138,9 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
         <AddTaskForm
           handleIcon={(e) => handleIcon(e)}
           selectedIcon={selectedIcon}
+          setSelectedIcon={e => setSelectedIcon(e)}
           taskTitle={taskTitle}
+          setTaskTitle={e => setTaskTitle(e)}
           handleChange={e => handleChange(e)}
           handleSubmit={e => handleSubmit(e)}
           setTasks={e => setTasks(e)}

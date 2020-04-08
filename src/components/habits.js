@@ -24,7 +24,6 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
       localStorage.setItem('habits', JSON.stringify(newArray))
       return newArray
     })
-    setSelectedIcon()
   }
 
   function handleChange(e){
@@ -71,10 +70,11 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
     setSelectedIcon(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
   }
 
-  
   function handleSelectHabit(e){
     e.preventDefault()
     setSelectedHabit(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setHabitTitle(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setSelectedIcon(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
     setBigButtonClicked(true)
   }
 
@@ -105,7 +105,9 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
 
   useEffect(() => {
     if(!clickedButton){
+      setSelectedIcon()
       setSelectedHabit()
+      setHabitTitle('')
     }
   }, [clickedButton])
 
@@ -116,7 +118,12 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
           onClick={(e) => handleSelectHabit(e)} 
           key={index} 
           className={selectedHabit === habit.title ? 'in-shadow-container' : null}
-          style={{marginBottom:'20px', transform:habit.completed ? 'scale(0.85)' : 'scale(1)', opacity:habit.completed ? '0.6': '1'}}>
+          style={{
+            marginBottom:'20px',
+            transform:habit.completed ? 'scale(0.85)' : 'scale(1)', 
+            opacity:habit.completed ? '0.6': '1'
+            }}
+          >
           <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
             <img className='icon' src={habit.icon} alt='icon' style={{height:'27px'}}/>
             <div className='title'>
@@ -130,7 +137,9 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
         <AddHabitForm
           handleIcon={(e) => handleIcon(e)}
           selectedIcon={selectedIcon}
+          setSelectedIcon={e => setSelectedIcon(e)}
           habitTitle={habitTitle}
+          setHabitTitle={e => setHabitTitle(e)}
           handleChange={e => handleChange(e)}
           handleSubmit={e => handleSubmit(e)}
           setHabits={e => setHabits(e)}
