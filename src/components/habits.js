@@ -1,16 +1,31 @@
 import React, {useState, useEffect} from 'react'
+import {useSprings, animated} from 'react-spring'
 
 import OutShadowContainer from './outshadowcontainer'
 import CheckBox from './checkbox'
 import AddHabitForm from './addhabitform'
 
+const AnimatedOutShadowContainer = animated(OutShadowContainer)
+
 function Habits({currentSlide, clickedButton, setBigButtonClicked}){
+
+
 
   const [habits, setHabits] = useState([])
   const [habitTitle, setHabitTitle] = useState('')
   const [habitDescription, setHabitDescription] = useState('')
   const [selectedIcon, setSelectedIcon] = useState()
   const [selectedHabit, setSelectedHabit] = useState()
+  const [date, setDate] = useState()
+
+  const springs = useSprings(habits.length, habits.map((habit) => ({to:{
+    marginBottom:'25px',
+    opacity:habit.completed[0].completed && habit.completed[0].date === date ? 0.5 : 1,
+    transform:habit.completed[0].completed && habit.completed[0].date === date ? 'scale(0.85)' : 'scale(1)'
+  },
+  config:{tension:10000, mass:1, friction:150}
+}
+  )))
 
   function handleClick(e){
     e.stopPropagation()
@@ -19,13 +34,21 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
       let newArray = [...prevState]
       newArray.forEach(habit => {
         if(habit.title === habitTitle){
-          habit.completed = !habit.completed 
+          if(habit.completed[0].date !== date){
+            habit.completed.unshift({
+              date:date,
+              completed:false
+            })
+          }
+          habit.completed[0].completed = !habit.completed[0].completed 
         }
       })
       localStorage.setItem('habits', JSON.stringify(newArray))
       return newArray
     })
   }
+
+  console.log(habits)
 
   function handleChange(e){
     let inputValue = e.target.value
@@ -49,7 +72,12 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
           title:habitTitle.trim(),
           description:habitDescription && habitDescription.trim(),
           icon:selectedIcon,
-          completed:false
+          completed:[
+            {
+              date:date,
+              completed:false
+            }
+          ],
         },
         ...prevState
       ]
@@ -123,29 +151,31 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
     }
   }, [clickedButton])
 
+  useEffect(() => {
+    let d = new Date()
+    setDate(`${d.getUTCDate()}/${d.getUTCMonth() + 1}/${d.getUTCFullYear()}`)
+  }, [])
+
   return(
     <div>
-      {habits.map((habit, index) => 
-        <OutShadowContainer 
+      {
+      springs.map((props, index) => 
+        <AnimatedOutShadowContainer 
           onClick={(e) => handleSelectHabit(e)} 
           key={index} 
-          className={selectedHabit === habit.title ? 'in-shadow-container' : null}
-          style={{
-            marginBottom:'20px',
-            transform:habit.completed ? 'scale(0.85)' : 'scale(1)', 
-            opacity:habit.completed ? '0.6': '1'
-            }}
+          className={selectedHabit === habits[index].title ? 'in-shadow-container' : null}
+          style={props}
           >
           <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-            <img className='icon' src={habit.icon} alt='icon' style={{height:'27px'}}/>
+            <img className='icon' src={habits[index].icon} alt='icon' style={{height:'27px'}}/>
             <div className='title'>
-              {habit.title}
+              {habits[index].title}
             </div>
             <div className='checkbox' onClick={(e) => handleClick(e)} alt='checkbox' style={{height:'27px'}}>
-              <CheckBox completed={habit.completed}/>
+              <CheckBox completed={habits[index].completed[0].completed && habits[index].completed[0].date === date}/>
             </div>
           </div>
-        </OutShadowContainer>)}
+        </AnimatedOutShadowContainer>)}
         <AddHabitForm
           handleIcon={(e) => handleIcon(e)}
           selectedIcon={selectedIcon}
