@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {animated, useSpring} from 'react-spring'
 
 import OutShadowContainer from './outshadowcontainer'
@@ -16,17 +16,9 @@ function AddTaskForm(props){
     from:{
       transform: clickedButton && currentSlide === 2 ? 'translate(-50%, 0) scale(0)' : 'translate(-50%, 0) scale(1)'
     },
-    to:[
-    {
-      opacity:clickedButton && currentSlide === 2 ? 1 : 1
-    },
-    {
+    to:{
       transform:clickedButton && currentSlide === 2 ? 'translate(-50%, 0) scale(1)' : 'translate(-50%, 0) scale(0)'
     },
-    {
-      opacity:clickedButton && currentSlide === 2 ? 1 : 0
-    }
-  ],
   config:{tension:1000, mass:1, friction:40}
   })
 

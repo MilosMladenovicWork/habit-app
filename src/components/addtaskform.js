@@ -14,17 +14,9 @@ function AddTaskForm(props){
     from:{
       transform: clickedButton && currentSlide === 0 ? 'translate(-50%, 0) scale(0)' : 'translate(-50%, 0) scale(1)'
     },
-    to:[
-    {
-      opacity:clickedButton && currentSlide === 0 ? 1 : 1
-    },
-    {
+    to:{
     transform:clickedButton && currentSlide === 0 ? 'translate(-50%, 0) scale(1)' : 'translate(-50%, 0) scale(0)'
     },
-    {
-      opacity:clickedButton && currentSlide === 0 ? 1 : 0
-    }
-  ],
   config:{tension:1000, mass:1, friction:40}
 })
 
