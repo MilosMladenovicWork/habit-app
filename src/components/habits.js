@@ -8,6 +8,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
 
   const [habits, setHabits] = useState([])
   const [habitTitle, setHabitTitle] = useState('')
+  const [habitDescription, setHabitDescription] = useState('')
   const [selectedIcon, setSelectedIcon] = useState()
   const [selectedHabit, setSelectedHabit] = useState()
 
@@ -33,12 +34,20 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
     })
   }
 
+  function handleDescription(e){
+    let inputValue = e.target.value
+    setHabitDescription(() => {
+      return inputValue
+    })
+  }
+
   function handleSubmit(e){
     e.preventDefault()
     setHabits((prevState) => {
       let newArray = [
         {
           title:habitTitle.trim(),
+          description:habitDescription && habitDescription.trim(),
           icon:selectedIcon,
           completed:false
         },
@@ -53,6 +62,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
       return newArray
     })
     setHabitTitle('')
+    setHabitDescription('')
     setSelectedIcon()
     setBigButtonClicked(false)
   }
@@ -74,6 +84,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
     e.preventDefault()
     setSelectedHabit(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
     setHabitTitle(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setHabitDescription(JSON.parse(localStorage.getItem('habits')).filter(habit => habit.title === e.currentTarget.childNodes[0].childNodes[1].innerHTML)[0].description)
     setSelectedIcon(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
     setBigButtonClicked(true)
   }
@@ -108,6 +119,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
       setSelectedIcon()
       setSelectedHabit()
       setHabitTitle('')
+      setHabitDescription('')
     }
   }, [clickedButton])
 
@@ -141,6 +153,9 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
           habitTitle={habitTitle}
           setHabitTitle={e => setHabitTitle(e)}
           handleChange={e => handleChange(e)}
+          habitDescription={habitDescription}
+          setHabitDescription={e => setHabitDescription(e)}
+          handleDescription={e => handleDescription(e)}
           handleSubmit={e => handleSubmit(e)}
           setHabits={e => setHabits(e)}
           selectedHabit={selectedHabit}

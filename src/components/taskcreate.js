@@ -4,6 +4,7 @@ import OutShadowContainer from './outshadowcontainer'
 import Button from './button'
 import InputField from './inputfield'
 import Icons from './icons'
+import TextArea from './textarea'
 
 function TaskCreate({
   handleIcon,
@@ -16,7 +17,9 @@ function TaskCreate({
   deselectTask,
   deleteTask,
   setClickedButton,
-  clickedButton
+  clickedButton,
+  taskDescription,
+  handleDescription
 }){
 
   const [message, setMessage] = useState('')
@@ -56,6 +59,7 @@ function TaskCreate({
       />
       <form action='#' metod='post'>
           <InputField type='text' name='title' value={taskTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
+          <TextArea name='description' value={taskDescription} placeholder='Description' onChange={(e) => handleDescription(e)}/>
           {message &&
             <OutShadowContainer>
               {message}

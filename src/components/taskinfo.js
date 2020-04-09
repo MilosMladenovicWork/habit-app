@@ -4,6 +4,7 @@ import OutShadowContainer from './outshadowcontainer'
 import Button from './button'
 import InputField from './inputfield'
 import Icons from './icons'
+import TextArea from './textarea'
 
 function TaskInfo({
   handleIcon,
@@ -17,7 +18,10 @@ function TaskInfo({
   deselectTask,
   deleteTask,
   setClickedButton,
-  clickedButton
+  clickedButton,
+  taskDescription,
+  setTaskDescription,
+  handleDescription
 }){
 
   const [message, setMessage] = useState('')
@@ -53,6 +57,7 @@ function TaskInfo({
       ]
       let index = newArray.findIndex(task => task.title === selectedTask)
       newArray[index].title = taskTitle
+      newArray[index].description = taskDescription
       newArray[index].icon = selectedIcon
 
       localStorage.setItem('tasks', 
@@ -63,6 +68,7 @@ function TaskInfo({
       return newArray
     })
     setTaskTitle('')
+    setTaskDescription('')
     setSelectedIcon()
     setClickedButton(false)
   }
@@ -81,6 +87,7 @@ function TaskInfo({
       />
       <form action='#' metod='post'>
           <InputField type='text' name='title' value={taskTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
+          <TextArea name='description' value={taskDescription} placeholder='Description' onChange={(e) => handleDescription(e)}/>
           {message &&
             <OutShadowContainer>
               {message}

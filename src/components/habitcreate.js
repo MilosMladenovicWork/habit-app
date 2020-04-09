@@ -4,21 +4,22 @@ import OutShadowContainer from './outshadowcontainer'
 import Icons from './icons'
 import Button from './button'
 import InputField from './inputfield'
+import TextArea from './textarea'
 
 function HabitCreate({
   handleIcon,
-  setSelectedIcon,
   selectedIcon,
   habitTitle,
   handleChange,
   handleSubmit,
-  setHabitTitle,
   setHabits,
   selectedHabit,
   deselectHabit,
   deleteHabit,
   setClickedButton,
-  clickedButton
+  clickedButton,
+  habitDescription,
+  handleDescription
 }){
 
   const [message, setMessage] = useState('')
@@ -58,6 +59,7 @@ function HabitCreate({
       />
       <form action='#' metod='post'>
           <InputField type='text' name='title' placeholder='Title' value={habitTitle} onChange={(e) => handleChange(e)}/>
+          <TextArea name='description' value={habitDescription} placeholder='Description' onChange={(e) => handleDescription(e)}/>
           {message &&
             <OutShadowContainer>
               {message}

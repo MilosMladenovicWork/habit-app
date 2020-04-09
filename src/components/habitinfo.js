@@ -4,6 +4,7 @@ import OutShadowContainer from './outshadowcontainer'
 import Button from './button'
 import InputField from './inputfield'
 import Icons from './icons'
+import TextArea from './textarea'
 
 function HabitInfo({
   handleIcon,
@@ -17,7 +18,10 @@ function HabitInfo({
   deselectHabit,
   deleteHabit,
   setClickedButton,
-  clickedButton
+  clickedButton,
+  habitDescription,
+  setHabitDescription,
+  handleDescription
 }){
 
   const [message, setMessage] = useState('')
@@ -52,9 +56,9 @@ function HabitInfo({
         ...prevState
       ]
       let index = newArray.findIndex(habit => habit.title === selectedHabit)
-      console.log(index)
       newArray[index].title = habitTitle
       newArray[index].icon = selectedIcon
+      newArray[index].description = habitDescription
 
       localStorage.setItem('habits', 
         JSON.stringify(
@@ -64,6 +68,7 @@ function HabitInfo({
       return newArray
     })
     setHabitTitle('')
+    setHabitDescription('')
     setSelectedIcon()
     setClickedButton(false)
   }
@@ -82,6 +87,7 @@ function HabitInfo({
       />
       <form action='#' metod='post'>
           <InputField type='text' name='title' value={habitTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
+          <TextArea name='description' value={habitDescription} placeholder='Description' onChange={(e) => handleDescription(e)}/>
           {message &&
             <OutShadowContainer>
               {message}

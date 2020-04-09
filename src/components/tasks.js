@@ -8,6 +8,7 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
 
   const [tasks, setTasks] = useState([])
   const [taskTitle, setTaskTitle] = useState('')
+  const [taskDescription, setTaskDescription] = useState('')
   const [selectedIcon, setSelectedIcon] = useState()
   const [selectedTask, setSelectedTask] = useState()
 
@@ -33,12 +34,20 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
     })
   }
 
+  function handleDescription(e){
+    let inputValue = e.target.value
+    setTaskDescription(() => {
+      return inputValue
+    })
+  }
+
   function handleSubmit(e){
     e.preventDefault()
     setTasks((prevState) => {
       let newArray = [
         {
           title:taskTitle.trim(),
+          description:taskDescription && taskDescription.trim(),
           icon:selectedIcon,
           completed:false
         },
@@ -53,6 +62,7 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
       return newArray
     })
     setTaskTitle('')
+    setTaskDescription('')
     setSelectedIcon()
     setBigButtonClicked(false)
   }
@@ -74,6 +84,7 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
     e.preventDefault()
     setSelectedTask(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
     setTaskTitle(e.currentTarget.childNodes[0].childNodes[1].innerHTML)
+    setTaskDescription(JSON.parse(localStorage.getItem('tasks')).filter(task => task.title === e.currentTarget.childNodes[0].childNodes[1].innerHTML)[0].description)
     setSelectedIcon(e.currentTarget.childNodes[0].childNodes[0].getAttribute('src'))
     setBigButtonClicked(true)
   }
@@ -108,6 +119,7 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
       setSelectedIcon()
       setSelectedTask()
       setTaskTitle('')
+      setTaskDescription('')
     }
   }, [clickedButton])
 
@@ -141,6 +153,9 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
           taskTitle={taskTitle}
           setTaskTitle={e => setTaskTitle(e)}
           handleChange={e => handleChange(e)}
+          taskDescription={taskDescription}
+          setTaskDescription={e => setTaskDescription(e)}
+          handleDescription={e => handleDescription(e)}
           handleSubmit={e => handleSubmit(e)}
           setTasks={e => setTasks(e)}
           selectedTask={selectedTask}
