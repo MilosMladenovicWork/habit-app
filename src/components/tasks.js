@@ -1,16 +1,29 @@
 import React, {useState, useEffect} from 'react'
+import {useSprings, animated} from 'react-spring'
 
 import OutShadowContainer from './outshadowcontainer'
 import CheckBox from './checkbox'
 import AddTaskForm from './addtaskform'
 
+const AnimatedOutShadowContainer = animated(OutShadowContainer)
+
 function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
 
+  
   const [tasks, setTasks] = useState([])
   const [taskTitle, setTaskTitle] = useState('')
   const [taskDescription, setTaskDescription] = useState('')
   const [selectedIcon, setSelectedIcon] = useState()
   const [selectedTask, setSelectedTask] = useState()
+
+  const springs = useSprings(tasks.length, tasks.map((task) => ({to:{
+    marginBottom:'25px',
+    opacity:task.completed ? 0.5 : 1,
+    transform:task.completed ? 'scale(0.85)' : 'scale(1)'
+  },
+  config:{tension:1000, mass:1, friction:40}
+}
+  )))
 
   function handleClick(e){
     e.stopPropagation()
@@ -125,27 +138,25 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
 
   return(
     <div>
-      {tasks.map((task, index) => 
-        <OutShadowContainer 
+      {
+        springs.map((props, index) => 
+          <AnimatedOutShadowContainer 
           onClick={(e) => handleSelectTask(e)}
           key={index} 
-          className={selectedTask === task.title ? 'in-shadow-container' : null}
-          style={{
-            marginBottom:'20px', 
-            transform:task.completed ? 'scale(0.85)' : 'scale(1)', 
-            opacity:task.completed ? '0.6': '1'
-            }}
+          className={selectedTask === tasks[index].title ? 'in-shadow-container' : null}
+          style={props}
           >
           <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-            <img className='icon' src={task.icon} alt='icon' style={{height:'27px'}}/>
+            <img className='icon' src={tasks[index].icon} alt='icon' style={{height:'27px'}}/>
             <div className='title'>
-              {task.title}
+              {tasks[index].title}
             </div>
             <div className='checkbox' onClick={(e) => handleClick(e)} alt='checkbox'>
-              <CheckBox completed={task.completed}/>
+              <CheckBox completed={tasks[index].completed}/>
             </div>
           </div>
-        </OutShadowContainer>)}
+        </AnimatedOutShadowContainer>
+        )}
         <AddTaskForm
           handleIcon={(e) => handleIcon(e)}
           selectedIcon={selectedIcon}
