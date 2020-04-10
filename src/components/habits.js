@@ -18,10 +18,16 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
   const [selectedHabit, setSelectedHabit] = useState()
   const [date, setDate] = useState()
 
+  function filterHabits(habit){
+    return habit.completed.filter(date => {
+      return date.date === `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`
+    }) 
+  }
+
   const springs = useSprings(habits.length, habits.map((habit) => ({to:{
     marginBottom:'25px',
-    opacity:habit.completed[0].completed && habit.completed[0].date === date ? 0.5 : 1,
-    transform:habit.completed[0].completed && habit.completed[0].date === date ? 'scale(0.85)' : 'scale(1)'
+    opacity:filterHabits(habit)[0] && filterHabits(habit)[0].date === date && filterHabits(habit)[0].completed === true ? 0.5 : 1,
+    transform:filterHabits(habit)[0] && filterHabits(habit)[0].date === date && filterHabits(habit)[0].completed === true ? 'scale(0.85)' : 'scale(1)'
   },
   config:{tension:10000, mass:1, friction:150}
 }
@@ -34,19 +40,39 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
       let newArray = [...prevState]
       newArray.forEach(habit => {
         if(habit.title === habitTitle){
-          if(habit.completed[0].date !== date){
+          let dateCompleted = habit.completed.filter(date => {
+            return date.date === `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`
+          }) 
+
+          if(!dateCompleted){
             habit.completed.unshift({
               date:date,
               completed:false
             })
           }
-          habit.completed[0].completed = !habit.completed[0].completed 
+          habit.completed.forEach(dateEntry => {
+            if(dateEntry.date === date){
+              console.log(dateEntry)
+              return dateEntry.completed = !dateEntry.completed
+            }
+          })
+          
         }
       })
       localStorage.setItem('habits', JSON.stringify(newArray))
       return newArray
     })
   }
+
+  useEffect(() => {
+    setHabits((prevState) => {
+      let newArray = [...prevState]
+      newArray.forEach(habit => {
+      habit.completed.sort((a, b) => new Date(a.date) - new Date(b.date))
+      })
+      return prevState
+    })
+  }, [habits])
 
   function handleChange(e){
     let inputValue = e.target.value
@@ -151,8 +177,9 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
 
   useEffect(() => {
     let d = new Date()
-    setDate(`${d.getUTCDate()}/${d.getUTCMonth() + 1}/${d.getUTCFullYear()}`)
+    setDate(`${d.getUTCMonth() + 1}/${d.getUTCDate()}/${d.getUTCFullYear()}`)
   }, [])
+  console.log(date)
 
   return(
     <div>
@@ -170,7 +197,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
               {habits[index].title}
             </div>
             <div className='checkbox' onClick={(e) => handleClick(e)} alt='checkbox' style={{height:'27px'}}>
-              <CheckBox completed={habits[index].completed[0].completed && habits[index].completed[0].date === date}/>
+              <CheckBox completed={filterHabits(habits[index])[0] && filterHabits(habits[index])[0].date === date && filterHabits(habits[index])[0].completed === true}/>
             </div>
           </div>
         </AnimatedOutShadowContainer>)}
@@ -185,6 +212,7 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
           setHabitDescription={e => setHabitDescription(e)}
           handleDescription={e => handleDescription(e)}
           handleSubmit={e => handleSubmit(e)}
+          habits={habits}
           setHabits={e => setHabits(e)}
           selectedHabit={selectedHabit}
           deselectHabit={e => deselectHabit(e)}

@@ -5,6 +5,7 @@ import Button from './button'
 import InputField from './inputfield'
 import Icons from './icons'
 import TextArea from './textarea'
+import Calendar from './calendar'
 
 function HabitInfo({
   handleIcon,
@@ -13,6 +14,7 @@ function HabitInfo({
   habitTitle,
   handleChange,
   setHabitTitle,
+  habits,
   setHabits,
   selectedHabit,
   deselectHabit,
@@ -25,6 +27,7 @@ function HabitInfo({
 }){
 
   const [message, setMessage] = useState('')
+  const [habitDates, setHabitDates] = useState()
 
   function titleExistMoreThanOneTimes(currentTitle){
     if(localStorage.getItem('habits')){
@@ -76,8 +79,20 @@ function HabitInfo({
   useEffect(() => {
     if(!clickedButton){
       setMessage('')
+      setHabitDates()
     }
   }, [clickedButton])
+
+  useEffect(() => {
+    setHabitDates(() => {
+      let newArray = [
+        ...habits
+      ]
+      let index = newArray.findIndex(habit => habit.title === selectedHabit)
+      return newArray[index].completed.map(completed => completed.date)
+    })
+  }, [selectedHabit, habits])
+
 
   return(
     <>
@@ -88,6 +103,12 @@ function HabitInfo({
       <form action='#' metod='post'>
           <InputField type='text' name='title' value={habitTitle} placeholder='Title' onChange={(e) => handleChange(e)}/>
           <TextArea name='description' value={habitDescription} placeholder='Description' onChange={(e) => handleDescription(e)}/>
+          <Calendar 
+            habits={habits}
+            habitDates={habitDates} 
+            setHabits={setHabits}
+            selectedHabit={selectedHabit}
+            />
           {message &&
             <OutShadowContainer>
               {message}

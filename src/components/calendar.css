@@ -1,0 +1,18 @@
+.calendar{
+  display:block;
+  width:100%;
+}
+
+.calendar tr{
+  display:flex;
+  justify-content: space-evenly;
+  width:100%;
+}
+
+.calendar td{
+  flex-grow: 1;
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
+  width:14.286%;
+}
