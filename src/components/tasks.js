@@ -15,11 +15,14 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
   const [selectedIcon, setSelectedIcon] = useState()
   const [selectedTask, setSelectedTask] = useState()
 
-  const springs = useSprings(tasks.length, tasks.map((task) => ({to:{
-    marginBottom:'25px',
-    opacity:task.completed ? 0.5 : 1,
-    transform:task.completed ? 'scale(0.85)' : 'scale(1)'
-  },
+  const springs = useSprings(tasks.length, tasks.map((task) => ({to:
+    [
+      {
+        marginBottom:'25px',
+        opacity:task.completed ? 0.5 : 1,
+        transform:task.completed ? 'scale(0.85)' : 'scale(1)'
+      }
+    ],
   config:{tension:10000, mass:1, friction:150}
 }
   )))
@@ -33,6 +36,9 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
         if(task.title === taskTitle){
           task.completed = !task.completed 
         }
+      })
+      newArray.sort((a, b) => {
+        return + a.completed - ( + b.completed)
       })
       localStorage.setItem('tasks', JSON.stringify(newArray))
       return newArray

@@ -48,8 +48,6 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
     })
   }
 
-  console.log(habits)
-
   function handleChange(e){
     let inputValue = e.target.value
     setHabitTitle(() => {
