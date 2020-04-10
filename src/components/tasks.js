@@ -23,6 +23,12 @@ function Tasks({currentSlide, clickedButton, setBigButtonClicked}){
         transform:task.completed ? 'scale(0.85)' : 'scale(1)'
       }
     ],
+    from:
+      {
+        marginBottom:'25px',
+        opacity:task.completed ? 0.5 : 1,
+        transform:task.completed ? 'scale(0.85)' : 'scale(1)'
+      },
   config:{tension:10000, mass:1, friction:150}
 }
   )))

@@ -103,7 +103,7 @@ function TaskInfo({
           <Button className='button' onClick={(e) => deselectTask(e)}>
             Deselect Task
           </Button>
-          <Button className='button' onClick={(e) => deleteTask(e)}>
+          <Button style={{background:'linear-gradient(#FF8F7D,#E86666)'}} className='button' onClick={(e) => deleteTask(e)}>
             Delete Task
           </Button>
           </>

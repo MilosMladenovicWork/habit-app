@@ -68,19 +68,9 @@ function HabitCreate({
           <Button type='submit' className='button' onClick={(e) => validateFields(e)}>
             Create Habit
           </Button>
-          <Button type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([]); setClickedButton(false)}}>
+          <Button style={{background:'linear-gradient(#FF8F7D,#E86666)'}} type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([]); setClickedButton(false)}}>
             Reset Habits
           </Button>
-          {selectedHabit &&
-          <>
-          <Button className='button' onClick={(e) => deselectHabit(e)}>
-            Deselect Habit
-          </Button>
-          <Button className='button' onClick={(e) => deleteHabit(e)}>
-            Delete Habit
-          </Button>
-          </>
-        }
       </form>
     </>
   )

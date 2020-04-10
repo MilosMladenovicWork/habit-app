@@ -102,7 +102,11 @@ function HabitInfo({
           <Button className='button' onClick={(e) => deselectHabit(e)}>
             Deselect Habit
           </Button>
-          <Button className='button' onClick={(e) => deleteHabit(e)}>
+          <Button 
+            className='button' 
+            onClick={(e) => deleteHabit(e)}
+            style={{background:'linear-gradient(#FF8F7D,#E86666)'}}
+          >
             Delete Habit
           </Button>
       </form>
