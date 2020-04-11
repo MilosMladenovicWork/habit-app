@@ -11,6 +11,7 @@ function Calendar({
   selectedHabit,
   habits
 }){
+  
   const [dateArray, setDateArray] = useState([])
   const [groupedDateObject, setGroupedDateObject] = useState()
   const [calendars, setCalendars] = useState()
@@ -42,7 +43,7 @@ function Calendar({
 
   useEffect(() => {
     groupedDateObject && setCalendars(() => {
-      let calendars = []
+      let calendarsArr = []
 
       const years = Object.keys(groupedDateObject)
 
@@ -51,20 +52,21 @@ function Calendar({
 
         months.forEach(month => {
           let days = Object.keys(groupedDateObject[year][month])
-          
-          calendars.unshift([
+          let day = days[0]
+
+          calendarsArr.unshift([
             {date:`${month}/1/${year}`},
-            ...calendarize(groupedDateObject[year][month][days] && new Date(groupedDateObject[year][month][days][0].datePlain), 1)
+            ...calendarize(groupedDateObject[year][month][day] && new Date(groupedDateObject[year][month][day][0].datePlain), 1)
           ])
         })
       })
       
-      return calendars
+      return calendarsArr
     })
   }, [groupedDateObject])
 
   return(
-    <>
+    <d>
       {calendars && calendars.map(calendar => {
         return <OutShadowContainer>
         <table className='calendar'>
@@ -96,23 +98,22 @@ function Calendar({
                     return <td style={{opacity:0}}>{day}</td>
                   }
                     return <td
+                    className='disable-selection'
                     onClick={(e) => {
                       let habitDay = e.target.innerHTML
                       setHabits((prevState) => {
                         let newArray = [...prevState]
                         newArray.forEach(habit => {
                           if(habit.title === selectedHabit){                
-                            console.log(habit.completed.filter(completedEntry => completedEntry.date === `${new Date(calendar[0].date).getMonth() + 2}/${habitDay}/${new Date(calendar[0].date).getFullYear()}`)[0])            
                             if(habit.completed.filter(completedEntry => completedEntry.date === `${new Date(calendar[0].date).getMonth() + 2}/${habitDay}/${new Date(calendar[0].date).getFullYear()}`)[0]){
-                              console.log(habit.completed,`${new Date(calendar[0].date).getMonth() + 2}/${habitDay}/${new Date(calendar[0].date).getFullYear()}`)
                               habit.completed.forEach((date, index) => {
                                 if(date.date === `${new Date(calendar[0].date).getMonth() + 2}/${habitDay}/${new Date(calendar[0].date).getFullYear()}`){
                                   habit.completed[index].completed = !habit.completed[index].completed
                                 }
                               })
-                            }else{                          
+                            }else{                        
                               habit.completed.push({
-                                date:`4/${habitDay}/2020`,
+                                date:`${new Date(calendar[0].date).getMonth() + 2}/${habitDay}/${new Date(calendar[0].date).getFullYear()}`,
                                 completed:true
                               })
                             }
@@ -134,7 +135,7 @@ function Calendar({
         </table>
     </OutShadowContainer>
       })}
-      </>
+      </d>
   )
 }
 

@@ -52,7 +52,6 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
           }
           habit.completed.forEach(dateEntry => {
             if(dateEntry.date === date){
-              console.log(dateEntry)
               return dateEntry.completed = !dateEntry.completed
             }
           })
@@ -179,7 +178,6 @@ function Habits({currentSlide, clickedButton, setBigButtonClicked}){
     let d = new Date()
     setDate(`${d.getUTCMonth() + 1}/${d.getUTCDate()}/${d.getUTCFullYear()}`)
   }, [])
-  console.log(date)
 
   return(
     <div>
