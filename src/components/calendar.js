@@ -87,7 +87,7 @@ function Calendar({
                     let daysArray = daysObject && Object.keys(daysObject)
                     let dayExist = daysArray && daysArray.find((dateDay) =>dateDay == day)
                     let habit = habits.filter(habit => habit.title === selectedHabit)[0]
-                    let dateEntry = habit.completed.filter(completedEntry => {return completedEntry.date == `${new Date(calendar[0].date).getMonth() + 2}/${day}/${new Date(calendar[0].date).getFullYear()}`})
+                    let dateEntry = habit && habit.completed.filter(completedEntry => {return completedEntry.date == `${new Date(calendar[0].date).getMonth() + 2}/${day}/${new Date(calendar[0].date).getFullYear()}`})
 
                     if(dayExist && dateEntry && dateEntry[0].completed){
                       return true
