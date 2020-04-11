@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220" height="220" viewBox="0 0 220 220">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 69 121">
+      <image width="69" height="121" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAB5CAYAAABvNez/AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5ElEQVR4nO2au48cRRCHf9Xds967tQhsApAFCMSBLXSHTACyBX8LESEpEpIlohMiIiIgAAkJiT8BITk8dBfxME7BPnM+cSawsLxn7U53F8H43rXeV/f0gevLdufRNd/0VE/XNO3c28EoVq+t4ofvr4/cfhxXdeBcNfH+h4kxcAwBruoAAM10kkS443/U21t4uL6G/voaXvKdVoKIMbCvhwAAXw/hqg6joBgHAPX2XTzcaEQM/9w82Prcq9kDiDHuC2l+hz0x2dsehdv66EMM72yO3zMDzJF9PTjxf4wBwddsXVWkt5hyQpj9cDhyewgeMQRuMaR9TIlGAbCvh2A8+Zq9H4JjbF1MCSmNEI4T7VzXAzBzq2JalxJ8jRjDVMf4egC0KKZVKTF4DsFPfRwzo25GqFbEtCaFY2Tv69mP54jDQ3dO2pLC3s9/QTEGxJh/RGpFSpNY01zL43NlFZNdSgyBp02s4wiZ80tWKcyc5LE5TuSIWRL2pGSVEuZIrJOcO9djlE1KjDH5Y3OcXNJzSeGQ4bE5TowhyzQgi5QQfGsvoI9zVtLGckjh6PMlwRONMU89bRhHcikxhLGz3+RtJr4Jo6UQwdP0znIOlaOIHMGcLrccrdESofvaRfSuvIve21ex9fmXU52MOfKkJYHUxBBgXZqO70CE7tLr6F15D713rsKdOz9XYERl6s0heFhXJSl4uxe/+Aru3LMJwmqSXikpKds3qYQAmLialotU7accfVouGuYLIJmU0r0EADieup5S9EtnE0GifFbqE8epJpmUkqNO6hhS9pTyXk6hFJCxKU83NSZR+0mlGFMuRZlmnpakq6SVMsMEMhVk0/XStFdBRKm68LTYhO0mv7V2xuVdc7Vpq6RpPrkUIiJrT6waywaBYF3a9rIkAesqUEv5JcfCwVyRU1V1sr+4uKoDMiZ5I/luJxG56ky2HuNcB8bYLNafGLGdc+ZLRFR1ziBljiEiVJ0ujM0jBBDW0Q5u/Y7+xo/ob6zhBTqbog2yroKxloP3M3+OICJY62AawVmfSwcAg9t/oL++hv7GGuqdvw62JlxHS2TIVR0wM8cQwBwQx9Q/iAjGWJAxe6/wrcyu3I0P3mf/t7wUvd/fne57LREwcfWrueCmWsb7VTMCAbT32kFgZnAIiCEALS3vcg+2747cOBgMx97Nw1AIiHOOOAwGuGxtU4tMAipFQKUIqBQBlSKgUgRUioBKEVApAipFQKUIqBQBlSKgUgRUisBIKWQs6sIfzEtxtEZrDLqvLGFx+S0svPEmdr75rlBYZXEwBt2Xl7C40oiwvV7pmIrjLny8Cns2SdX+f4NRISfR0UdApQioFAGVIqBSBFSKgEoRUCkCKkVApQioFAGVIqBSBFSKgEoRGC2Fee51tP9VjtZomTHYvIXd337Go5u/4PnqmUJhlcWBGYM7t7F74yc8uvkr/IP7B1vPP6VStj/7BP6f++P3fIowKuQkOvoIqBQBlSKgUgRUioBKEVApAipFQKUIqBQBlSKgUgRUioBKEVApAqPX0boKQ11H24joLl3E4vJlLFxaxr2vvy0VV1EcWdeIWLmMhUsrMN1u6ZiK4y5c+1RFHMOokJPo6COgUgRUioBKEVApAipFQKUIqBQBlSKgUgRUioBKEVApAipFQKUIqBSBfwEF9MyoZbcKsQAAAABJRU5ErkJggg=="/>
+    </pattern>
+  </defs>
+  <g id="Group_568" data-name="Group 568" transform="translate(254 -2433)">
+    <g id="Group_566" data-name="Group 566" transform="translate(-27.121 -135.139)">
+      <g id="Group_452" data-name="Group 452" transform="translate(-169.367 2568.139)">
+        <g id="Group_443" data-name="Group 443" transform="translate(10.333 0)">
+          <g id="Group_442" data-name="Group 442" transform="translate(0)">
+            <image id="Rectangle_334" data-name="Rectangle 334" width="51.656" height="220" transform="translate(0)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAEACAYAAADvMxUQAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEdElEQVR4nO3cyXLbRhSF4dsYKVJyHi3PkKo8eiqLLGUSU09ZkLJTtlQ0bw9wjs9f5Y0tovsjGsRg2uaP3/+U2m3rEkVEhvFgao/d1R7QOxen6SwiIm3bxbbrqqKbmoOFEOL5/CoSRSSKnM+vEkKINedQExyny2eJIXz9jRBkunwWub4FVaoGXpdZnLXf/b6zVtZlrjWNOmDvfZzny4d/Ps8X8d5X2csVwDFOb8fthz8it6Udi6OLg+d5Eu/93Z/zzskyl1/aRcHO2bg+gFjmSZyzRfdyMXCMMU7nzw+/brqcJcZyS7sYeJ4uEv5zCvrRgvcyTx9/wKVWBGztFrd1Ub9+Wxexdiuyl7ODY4xxvpyTtzMXWtrZwesyq5byt4UQilyQZAWHEOKScZLL9c3LupezgufpkvfaIcbsH2DZwM7ZaLc11+a+ZLc167k5G7jkqSTntrOArd2idy7Hpt7NO5ftNJUFXOP2LtcYyWDnbHzvPjd3ztosx3IyuMYdTs6xksDeu+jsljyJH83ZTbx3SXs5Cbwu+uvlvcZMAUdr859372WvK0q9l9VgZ63Euk9YReT6pDPlQ1IN3gpcVdUYWwveZTm/dRtbtbxU4L2W81sxRPWyVoG9L3cZWXoOSvD9x66lC0E3BxVYO1jOtG+6Epz+CCc17Rw04Bh+hiV9ncPDn5wPgws+I384zVweBhtjqn9N4aM0c1Edw6bZ36ydgw5sqn5TIusclOCfYA8r56ACN02rGixn2jmowF1X/dtO38+h71Wv04GVg+Ws6yqC27YT2fM4NkbatuKSFhHT77iXb2Or3nH1+WUYD9qXJpcythrc94M0ymWVUtO20veD+nhKuYIw4w57OXXMpEumYTxU3ctN2yYfSklgY4w5nV6SJvBIp9NL8s1L8kVx23Xm8HRM3czdDk9HyfHd6ix3AYeno/TDkGNT79YPg+R6U3Pd9pjT8ycZxjHT5r42jKOcnj+JKM+735bzPs8cTy/Z9oTIdeUcr58R2S7rct8FmOvyHuM8ndUPy7u+l6fjs7Rtm/36tchtT9u25vnlN7F2i3ZbxW7b3edPxhjph0H6YUy6sLhXt61r0adyXTdI1/XinJMQvIQQvjxibZrm9qu93XIaiSFKyTl1t39ksUvB+9vjViu1/jJy/4dTlSMYPYLRIxg9gtEjGD2C0SMYPYLRIxg9gtEjGL1fDty9Tun/QcH/qe6vf/7eew5V++WWNMHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYwewegRjB7B6BGMHsHoEYzev7d4pCkxQIL6AAAAAElFTkSuQmCC"/>
+          </g>
+        </g>
+        <g id="Group_444" data-name="Group 444" transform="translate(0.004 47.809)">
+          <rect id="Rectangle_335" data-name="Rectangle 335" width="51.657" height="172.187" transform="translate(0 0)" fill="#e9eae9"/>
+        </g>
+        <g id="Group_445" data-name="Group 445" transform="translate(11.125 0.003)">
+          <path id="Path_569" data-name="Path 569" d="M160.369,172.8s14.7,17.419,14.7,29.384-6.588,18.43-14.7,18.43-14.7-6.464-14.7-18.43S160.369,172.8,160.369,172.8Z" transform="translate(-145.666 -172.797)" fill="#c74237" fill-rule="evenodd"/>
+        </g>
+        <g id="Group_446" data-name="Group 446" transform="translate(15.638 9.408)">
+          <path id="Path_570" data-name="Path 570" d="M111.089,138.778s10.185,13.99,10.185,23.6-4.564,14.8-10.185,14.8-10.185-5.191-10.185-14.8S111.089,138.778,111.089,138.778Z" transform="translate(-100.905 -138.778)" fill="#d17135" fill-rule="evenodd"/>
+        </g>
+        <g id="Group_447" data-name="Group 447" transform="translate(21.153 20.579)">
+          <path id="Path_571" data-name="Path 571" d="M51.032,98.418s4.679,9.921,4.679,16.736-2.1,10.5-4.679,10.5-4.679-3.682-4.679-10.5S51.032,98.418,51.032,98.418Z" transform="translate(-46.354 -98.418)" fill="#da8c27" fill-rule="evenodd"/>
+        </g>
+        <path id="Path_572" data-name="Path 572" d="M1914.639,1152.558l-51.656,17.408v17.122l51.656-17.408Z" transform="translate(-1862.984 -967.091)" fill="#c74237" fill-rule="evenodd"/>
+        <g id="Group_448" data-name="Group 448" transform="translate(0 151.124)">
+          <path id="Path_573" data-name="Path 573" d="M1914.639,1152.558l-51.656,17.408v17.122l51.656-17.408Z" transform="translate(-1862.984 -1152.558)" fill="#c74237" fill-rule="evenodd"/>
+        </g>
+        <g id="Group_449" data-name="Group 449" transform="translate(0 116.782)">
+          <path id="Path_574" data-name="Path 574" d="M1914.639,1152.558l-51.656,17.408v17.122l51.656-17.408Z" transform="translate(-1862.984 -1152.558)" fill="#c74237" fill-rule="evenodd"/>
+        </g>
+        <g id="Group_450" data-name="Group 450" transform="translate(0 82.155)">
+          <path id="Path_575" data-name="Path 575" d="M1914.639,1152.558l-51.656,17.408v17.122l51.656-17.408Z" transform="translate(-1862.984 -1152.558)" fill="#c74237" fill-rule="evenodd"/>
+        </g>
+        <g id="Group_451" data-name="Group 451" transform="translate(0 47.813)">
+          <path id="Path_576" data-name="Path 576" d="M1914.639,1152.558l-51.656,17.408v17.122l51.656-17.408Z" transform="translate(-1862.984 -1152.558)" fill="#c74237" fill-rule="evenodd"/>
+        </g>
+      </g>
+      <g id="Group_558" data-name="Group 558" transform="translate(-128.442 2684.156)">
+        <g id="Group_551" data-name="Group 551" transform="translate(4.445 0.005)">
+          <g id="Group_550" data-name="Group 550" transform="translate(0 0)">
+            <rect id="Rectangle_346" data-name="Rectangle 346" width="58.846" height="103.979" fill="url(#pattern)"/>
+          </g>
+        </g>
+        <g id="Group_552" data-name="Group 552" transform="translate(0.002 37.275)">
+          <rect id="Rectangle_347" data-name="Rectangle 347" width="55.589" height="66.707" transform="translate(0 0)" fill="#83b986"/>
+        </g>
+        <g id="Group_553" data-name="Group 553" transform="translate(0 48.39)">
+          <rect id="Rectangle_348" data-name="Rectangle 348" width="55.587" height="11.118" fill="#39893d"/>
+        </g>
+        <g id="Group_554" data-name="Group 554" transform="translate(0 70.625)">
+          <rect id="Rectangle_349" data-name="Rectangle 349" width="55.587" height="11.118" fill="#39893d"/>
+        </g>
+        <g id="Group_557" data-name="Group 557" transform="translate(13.767 0)">
+          <path id="Path_600" data-name="Path 600" d="M153.09,134.7s14.035,13.578,14.035,22.906-6.289,14.366-14.035,14.366-14.035-5.039-14.035-14.366S153.09,134.7,153.09,134.7Z" transform="translate(-139.054 -134.698)" fill="#c74237" fill-rule="evenodd"/>
+          <g id="Group_555" data-name="Group 555" transform="translate(4.312 7.337)">
+            <path id="Path_601" data-name="Path 601" d="M106.05,108.186s9.723,10.906,9.723,18.4-4.357,11.539-9.723,11.539-9.723-4.047-9.723-11.539S106.05,108.186,106.05,108.186Z" transform="translate(-96.327 -108.186)" fill="#d17135" fill-rule="evenodd"/>
+          </g>
+          <g id="Group_556" data-name="Group 556" transform="translate(9.569 16.043)">
+            <path id="Path_602" data-name="Path 602" d="M48.71,76.72s4.466,7.734,4.466,13.046-2,8.183-4.466,8.183-4.466-2.87-4.466-8.183S48.71,76.72,48.71,76.72Z" transform="translate(-44.244 -76.72)" fill="#da8c27" fill-rule="evenodd"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <rect id="Rectangle_352" data-name="Rectangle 352" width="220" height="220" transform="translate(-254 2433)" fill="none"/>
+  </g>
+</svg>

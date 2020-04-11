@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+  <g id="Group_635" data-name="Group 635" transform="translate(254 -2433)">
+    <g id="Group_599" data-name="Group 599" transform="translate(-575.949 2198.8)">
+      <path id="Path_603" data-name="Path 603" d="M505.319,394.574l-82.537,9.987,1.762,14.686,22.323-2.643v16.6h-69.76V391.49a76.632,76.632,0,0,1,53.311-72.844l9.4,56.983,6.609-1.028,4.553,11.161L478,381.209l.734-12.043,6.609-1.028L466.4,254.614l-9.987,1.616-1.762-11.015,7.049-1.175-1.615-9.84-39.506,6.609,1.616,9.84,7.049-1.175,1.762,11.015-9.987,1.616,6.021,36.128a97.355,97.355,0,0,0-70.641,93.4V454.2H473.89V437.164h.147V413.519l32.9-3.965Z" transform="translate(0 0)" fill="#1e4c4c"/>
+      <rect id="Rectangle_370" data-name="Rectangle 370" width="46.115" height="115.14" transform="translate(421.167 262.009) rotate(-9.439)" fill="#cce4c4"/>
+      <circle id="Ellipse_75" data-name="Ellipse 75" cx="14.393" cy="14.393" r="14.393" transform="translate(411.18 292.945)" fill="#1e4c4c"/>
+      <path id="Path_604" data-name="Path 604" d="M408.149,285.125a3.525,3.525,0,1,0-3.525,3.525A3.574,3.574,0,0,0,408.149,285.125Z" transform="translate(20.948 22.213)" fill="#cce4c4"/>
+      <path id="Path_605" data-name="Path 605" d="M432.048,241.6,406.2,246.006l1.615,10.721,25.848-4.259Z" transform="translate(23.338 3.468)" fill="#1e4c4c"/>
+      <path id="Path_606" data-name="Path 606" d="M417.8,331.434,450.257,326l-.734,12.043L422.5,342.6Z" transform="translate(28.774 43.02)" fill="#1e4c4c"/>
+      <path id="Path_607" data-name="Path 607" d="M439,247.9l-23.5,3.818,18.8,113.525,24.82-4.112Z" transform="translate(27.696 6.42)" fill="#1e4c4c" opacity="0.2"/>
+      <path id="Path_608" data-name="Path 608" d="M418.147,359.337,445.9,356.4v7.931L418,365.652Z" transform="translate(28.867 57.266)" fill="#1e4c4c" fill-rule="evenodd" opacity="0.6"/>
+      <path id="Path_609" data-name="Path 609" d="M448.4,361.7a9.4,9.4,0,1,0-9.4,9.4A9.563,9.563,0,0,0,448.4,361.7Z" transform="translate(34.303 55.345)" fill="#1e4c4c"/>
+      <path id="Path_610" data-name="Path 610" d="M440.649,359.825a3.525,3.525,0,1,0-3.525,3.525A3.479,3.479,0,0,0,440.649,359.825Z" transform="translate(36.178 57.219)" fill="#cce4c4"/>
+    </g>
+    <rect id="Rectangle_381" data-name="Rectangle 381" width="220" height="220" transform="translate(-254 2433)" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220.3" height="220" viewBox="0 0 220.3 220">
+  <g id="Group_139" data-name="Group 139" transform="translate(-157 -1986)">
+    <g id="Graduation_Hat" transform="translate(11.1 1944.5)">
+      <path id="Path_154" data-name="Path 154" d="M203.7,139.989l52.461,6.22,52.461-6.22a11.917,11.917,0,0,1,13.7,12.079v39.211c0,7.572-6.31,13.7-13.7,15.324L256.162,218.32,203.7,206.6c-7.391-1.622-13.7-7.752-13.7-15.324V152.068c-.09-7.572,6.129-12.98,13.7-12.079Z" transform="translate(-4.349 -5.176)" fill="#333" fill-rule="evenodd"/>
+      <path id="Path_155" data-name="Path 155" d="M263.4,146.209l52.461-6.22a11.917,11.917,0,0,1,13.7,12.079v39.211c0,7.572-6.31,13.7-13.7,15.324L263.4,218.32Z" transform="translate(-11.587 -5.176)" fill="#292929" fill-rule="evenodd"/>
+      <path id="Path_156" data-name="Path 156" d="M342.223,133.172l15.5-1.172v7.031L251.813,179.143,145.9,139.031V132l12.259,2.344Z" transform="translate(0 -4.398)" fill="#010000" fill-rule="evenodd"/>
+      <path id="Path_157" data-name="Path 157" d="M251.813,87.4l105.913,40.2L251.813,167.714,145.9,127.6Z" transform="translate(0)" fill="#323232" fill-rule="evenodd"/>
+      <path id="Path_158" data-name="Path 158" d="M368.82,128.5H264.71c-2.344,0-6.31,0-6.31,3.7,0,3.876,4.327,3.7,6.76,3.7h97.891v49.216h5.769V128.5Z" transform="translate(-11.093 -4.053)" fill="#f78729" fill-rule="evenodd"/>
+      <path id="Path_159" data-name="Path 159" d="M372.221,193.3l4.237.992,4.237-.992,7.121,31.639-4.958-4.507-2.614,6.22-3.786-16.766-3.786,16.766-2.614-6.22-4.958,4.507Z" transform="translate(-21.615 -10.443)" fill="#f78729" fill-rule="evenodd"/>
+      <path id="Path_160" data-name="Path 160" d="M376.852,200.7a7.752,7.752,0,1,0-7.752-7.752,7.81,7.81,0,0,0,7.752,7.752Z" transform="translate(-22.01 -9.644)" fill="#e17c28" fill-rule="evenodd"/>
+    </g>
+    <rect id="Rectangle_70" data-name="Rectangle 70" width="220" height="220" transform="translate(157 1986)" fill="none"/>
+  </g>
+</svg>

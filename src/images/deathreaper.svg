@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220.689" height="220.37" viewBox="0 0 220.689 220.37">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="path310" d="M5262.88-3970.043h74.291v107.76H5262.88Z" transform="translate(-5262.88 3970.043)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_579" data-name="Group 579" transform="translate(254 -2432.63)">
+    <g id="Group_578" data-name="Group 578" transform="translate(-588.834 -653)">
+      <g id="g286" transform="translate(373.249 3126.425)">
+        <path id="path288" d="M-13.381-156.939c-.135.166-.256.345-.39.525l-5.72-43.082a96.708,96.708,0,0,1,127.926-9.2,96.2,96.2,0,0,1,35.984,57.8,96.855,96.855,0,0,0-22.256-24.054,96.684,96.684,0,0,0-135.544,18.01" transform="translate(19.492 228.607)" fill="#9b9b9b"/>
+      </g>
+      <g id="g290" transform="translate(335.153 3139.666)">
+        <path id="path292" d="M-57.7-157.014l32.59-15.19-26.354-56.512L-84.049-213.5Z" transform="translate(84.049 228.715)" fill="#dbdbdb"/>
+      </g>
+      <g id="g294" transform="translate(371.079 3117.681)">
+        <path id="path296" d="M-13.352-156.922c-.125.166-.252.354-.386.52l-5.712-43.055a96.683,96.683,0,0,1,127.908-9.222,96.363,96.363,0,0,1,36.011,57.809A97.071,97.071,0,0,0,122.2-174.927,96.7,96.7,0,0,0-13.352-156.922" transform="translate(19.449 228.582)" fill="#dbdbdb"/>
+      </g>
+      <g id="g298" transform="translate(335.152 3085.63)">
+        <path id="path300" d="M-452.409-361.907c-4.829-4.824-40.768-25.439-58.72-35.6,5.645-16.378,10.514-43.431,10.514-60.8,0-27.546-21.588-68.866-48.206-68.866s-48.206,41.319-48.206,68.866c0,17.369,4.871,44.422,10.514,60.8-17.952,10.163-53.891,30.778-58.72,35.6-12.948,12.957-13.773,55.1-13.773,55.1h220.371s-.825-42.144-13.773-55.1" transform="translate(659.006 527.176)" fill="#4d4949" fill-rule="evenodd"/>
+      </g>
+      <g id="g302" transform="translate(417.792 3113.176)">
+        <path id="path304" d="M-60.321,0c13.648,0,27.546,20.659,27.546,48.206,0,41.319-13.773,82.639-27.546,82.639S-87.868,89.526-87.868,48.206C-87.868,20.659-73.967,0-60.321,0" transform="translate(87.868)" fill="#282828" fill-rule="evenodd"/>
+      </g>
+      <g id="g306" transform="translate(365.141 3198.239)">
+        <g id="g320">
+          <g id="g318" clip-path="url(#clip-path)">
+            <g id="g316" transform="translate(0.001 0.001)">
+              <path id="path314" d="M-52.634,0-76.67,11.218l45.014,96.542H-2.379Z" transform="translate(76.67)" fill="#b57521"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <rect id="Rectangle_359" data-name="Rectangle 359" width="220" height="220" transform="translate(-254 2433)" fill="none"/>
+  </g>
+</svg>
