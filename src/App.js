@@ -13,6 +13,9 @@ import InputField from './components/inputfield'
 import './App.css'
 
 import welcomeImg from './images/logo.svg'
+import appScreen1 from './images/appscreen1.svg'
+import appScreen2 from './images/appscreen2.svg'
+import appScreen3 from './images/appscreen3.svg'
 
 const params = {
   pagination:{
@@ -52,33 +55,45 @@ function App({history}) {
         <Swiper {...params}>
         <div className='introduction-page'>
           <OutShadowContainer>
-            <img src={welcomeImg} alt='Welcome' className='introduction-image'/>
+            <img
+              style={{height:"30vh",
+                display:"block",
+                margin:"auto",
+                objectFit:"contain"
+              }}
+            src={appScreen1} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <InShadowContainer>
-            <p>
-              This is sample text. This is sample text. This is sample text. 
-              This is sample text. This is sample text. This is sample text. 
-              This is sample text. This is sample text. This is sample text. 
-              This is sample text. This is sample text. This is sample text. 
+            <p style={{textAlign:'center'}}>
+              Welcome to BitHabit!
             </p>
           </InShadowContainer>
         </div>
         <div className='introduction-page'>
           <OutShadowContainer>
-            <img src={welcomeImg} alt='Welcome' className='introduction-image'/>
+            <img
+              style={{height:"30vh",
+              display:"block",
+              margin:"auto",
+              objectFit:"contain"
+            }}
+            src={appScreen2} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <InShadowContainer>
-            <p>
-              This is sample text. This is sample text. This is sample text. 
-              This is sample text. This is sample text. This is sample text. 
-              This is sample text. This is sample text. This is sample text. 
-              This is sample text. This is sample text. This is sample text. 
+            <p style={{textAlign:'center'}}>
+              Make tasks and habits, work on them and track what you have done! 
             </p>
           </InShadowContainer>
         </div>
         <div className='introduction-page'>
           <OutShadowContainer>
-            <img src={welcomeImg} alt='Welcome' className='introduction-image'/>
+            <img
+              style={{height:"30vh",
+              display:"block",
+              margin:"auto",
+              width:"100%"
+            }}
+            src={appScreen3} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <form action='#' method='POST'>   
             <InputField type='text' name='name' value={name} placeholder='Name' className='input-field' onChange={e => handleChange(e)}/>

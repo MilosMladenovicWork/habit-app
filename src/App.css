@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
   color:#303030;
+  outline:none;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -24,6 +25,8 @@ h1{
   height:30vh;
   display:block;
   margin:auto;
+  object-fit: cover;
+  width:100%;
 }
 
 .App .introduction-page{

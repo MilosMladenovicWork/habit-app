@@ -10,7 +10,8 @@ import Tasks from './tasks'
 import Habits from './habits'
 import Button from './button'
 import BigButton from './bigbutton'
-import testImg from '../images/logo.svg'
+import StartScreen from './startscreen'
+import MotivationalImages from './motivationalimages'
 import './home.css'
 
 const AnimatedBigButton = animated(BigButton)
@@ -82,12 +83,10 @@ function Home({history}){
             Hi {localStorage.getItem('username')}
           </SectionHeader>
           <div className='content'>
-            <OutShadowContainer>
-              <img src={testImg} alt='Welcome' className='introduction-image'/>
-            </OutShadowContainer>
-            <Button type='submit' className='button' onClick={e => resetStorage(e)}>
-              Reset Storage
-            </Button>
+            <StartScreen 
+              currentSlide={currentSlide}
+              onClick={(e) => resetStorage(e)}
+            />
           </div>
         </div>
         <div>
