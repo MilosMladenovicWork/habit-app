@@ -52,4 +52,13 @@
   #home .swiper-slide-active{
     opacity:1;
   }
+
+  #home .swiper-container{
+    height:80vh;
+  }
+
+  #home .content{
+    height:100%;
+    padding-bottom:20vh;
+  }
 }
