@@ -8,5 +8,11 @@
   width:calc(100% - 24px);
   max-height:51.5vh;
   transition:0.35s;
-  overflow-y:auto
+  overflow-y:auto;
+}
+
+@media (min-width:1200px){
+  .creation-popup{
+    width:30vw;
+  }
 }

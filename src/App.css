@@ -25,12 +25,13 @@ h1{
   height:30vh;
   display:block;
   margin:auto;
-  object-fit: cover;
+  object-fit: contain;
   width:100%;
 }
 
 .App .introduction-page{
   padding:0vh 12px 5vh;
+  margin-top:15vh;
 }
 
 .swiper-container .swiper-pagination .swiper-pagination-bullet{
@@ -45,4 +46,57 @@ h1{
   width:12px;
   height:12px;
   box-shadow:1px 1px 0px rgba(0, 0, 0, 0.4), -1px -1px 0px rgba(255, 255, 255, 1);
+}
+
+.swiper-button-prev, .swiper-button-next{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .App .introduction-image{
+    height:30vh;
+    width:30vh;
+  }
+  .App .introduction-page .swiper-slide{
+    opacity:0;
+    transition:0.3s;
+    width:auto !important;
+  }
+
+  .App .swiper-slide-active{
+    opacity:1
+  }
+
+  .App .introduction-page .swiper-slide-prev{
+    opacity:0;
+  }
+  .App .introduction-page .swiper-slide-next{
+    opacity:0.3
+  }
+  .swiper-button-prev, .swiper-button-next{
+    background:linear-gradient(#7DEEFF, #66B5E8);
+    display:flex;
+    width:75px;
+    height:75px;
+    padding:14px;
+    border-radius: 50%;
+    color:#fff;
+    transition:0.3s;
+  }
+  .App .swiper-button-disabled{
+    opacity:0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #F0F1F6; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #727272; 
+    border-radius: 10px;
+  }
 }

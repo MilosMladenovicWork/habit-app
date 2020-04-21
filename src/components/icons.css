@@ -5,3 +5,10 @@
   overflow-y:auto;
   margin-bottom:25px;
 }
+
+@media (min-width:1200px){
+  .icons-container{
+    height:40vh;
+    overflow-y: auto;
+  }
+}

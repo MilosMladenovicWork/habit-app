@@ -66,7 +66,7 @@ function HabitCreate({
             Create Habit
           </Button>
           <Button style={{background:'linear-gradient(#FF8F7D,#E86666)'}} type='submit' className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('habits');setHabits([]); setClickedButton(false)}}>
-            Reset Habits
+            Delete Habits
           </Button>
       </form>
     </>

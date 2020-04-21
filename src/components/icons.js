@@ -226,8 +226,8 @@ function Icons({
     className='icons-container' onScroll={() => scrollInContainer()}>
       {
         icons.map((icon, index) =>
-          index < addIcons * 12 && <div style={{width:'fit-content', width:'21%', marginLeft:'2%', marginRight:'2%'}} onClick={(e) => handleIcon(e)}>
-            <OutShadowContainer style={{marginBottom:'12px'}} className={selectedIcon === icon ? 'in-shadow-container' : null} key={index}>
+          index < addIcons * 12 && <div  key={index} style={{width:'fit-content', width:'21%', marginLeft:'2%', marginRight:'2%'}} onClick={(e) => handleIcon(e)}>
+            <OutShadowContainer style={{marginBottom:'12px'}} className={selectedIcon === icon ? 'in-shadow-container' : null}>
               <img src={icon} style={{width:'100%'}}/>
             </OutShadowContainer>
           </div>

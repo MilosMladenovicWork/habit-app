@@ -24,9 +24,6 @@
 #home .swiper-pagination{
   position:fixed;
   bottom:0;
-}
-
-#home .swiper-pagination{
   display:flex;
   justify-content: space-evenly;
   background-color:#F0F1F6;
@@ -35,12 +32,24 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 1);
 }
 
+
 #home .swiper-pagination .swiper-pagination-bullet{
   margin:0 0px;
 }
 
-#home .swiper-pagination .swiper-pagination-bullet-active{
-  width:100px;
-  transition:0.2s;
-  border-radius:10px;
+#home{
+  margin-top:5vh;
+}
+
+@media (min-width:1200px){
+  #home .swiper-slide{
+    opacity:0.3;
+    transition:0.3s;
+    width:40vw !important;
+    padding-left:100px;
+    padding-right: 100px;
+  }
+  #home .swiper-slide-active{
+    opacity:1;
+  }
 }

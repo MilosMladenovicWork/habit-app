@@ -69,7 +69,7 @@ function TaskCreate({
             Create Task
           </Button>
           <Button style={{background:'linear-gradient(#FF8F7D,#E86666)'}} className='button' onClick={(e) => {e.preventDefault();localStorage.removeItem('tasks');setTasks([]);setClickedButton(false)}}>
-            Reset Tasks
+            Delete Tasks
           </Button>
       </form>
     </>

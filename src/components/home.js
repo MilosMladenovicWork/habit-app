@@ -39,6 +39,16 @@ function Home({history}){
       type:'bullets',
       clickable:true
     },
+    breakpoints:{
+      1200:{
+        centeredSlides:true,
+        slidesPerView:"auto",
+        navigation:{
+          nextEl:'.swiper-button-next',
+          prevEl:'.swiper-button-prev'
+        }
+      }
+    },
     initialSlide:1,
     on:{
       slideChange:function(){

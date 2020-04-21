@@ -21,7 +21,7 @@ function MotivationalImages(){
 
   return(
     <img
-    style={{borderRadius:'10px'}}
+    style={{borderRadius:'10px', objectFit:'cover', width:'100%'}}
     src={image} alt='Welcome' className='introduction-image'/>
   )
 }

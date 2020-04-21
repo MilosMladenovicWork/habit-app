@@ -12,7 +12,6 @@ import ProtectedRoute from './components/protectedroute'
 import InputField from './components/inputfield'
 import './App.css'
 
-import welcomeImg from './images/logo.svg'
 import appScreen1 from './images/appscreen1.svg'
 import appScreen2 from './images/appscreen2.svg'
 import appScreen3 from './images/appscreen3.svg'
@@ -22,6 +21,17 @@ const params = {
     el:'.swiper-pagination',
     type:'bullets',
     clickable:true
+  },
+  breakpoints:{
+    1200:{
+      centeredSlides:true,
+      slidesPerView:"auto",
+      spaceBetween:100,
+      navigation:{
+        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev'
+      }
+    }
   }
 }
 
@@ -56,27 +66,17 @@ function App({history}) {
         <div className='introduction-page'>
           <OutShadowContainer>
             <img
-              style={{height:"30vh",
-                display:"block",
-                margin:"auto",
-                objectFit:"contain"
-              }}
             src={appScreen1} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <InShadowContainer>
             <p style={{textAlign:'center'}}>
-              Welcome to BitHabit!
+              Welcome to HabiTask!
             </p>
           </InShadowContainer>
         </div>
         <div className='introduction-page'>
           <OutShadowContainer>
             <img
-              style={{height:"30vh",
-              display:"block",
-              margin:"auto",
-              objectFit:"contain"
-            }}
             src={appScreen2} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <InShadowContainer>
@@ -88,11 +88,6 @@ function App({history}) {
         <div className='introduction-page'>
           <OutShadowContainer>
             <img
-              style={{height:"30vh",
-              display:"block",
-              margin:"auto",
-              width:"100%"
-            }}
             src={appScreen3} alt='Welcome' className='introduction-image'/>
           </OutShadowContainer>
           <form action='#' method='POST'>   
@@ -104,6 +99,12 @@ function App({history}) {
         </div>
       </Swiper>
       }/>
+      <div className='swiper-button-prev'>
+        
+      </div>
+      <div className='swiper-button-next'>
+
+      </div>
       <ProtectedRoute authenticated={name} path='/home' component={Home}/>
     </div>
   );
