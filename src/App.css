@@ -52,12 +52,13 @@ h1{
   display:none;
 }
 
-@media (min-width:1200px){
+@media (min-width: 1200px){
   .App .introduction-image{
     height:30vh;
     width:30vh;
   }
-  .App .introduction-page .swiper-slide{
+  
+  .App .introduction-page {
     opacity:0;
     transition:0.3s;
     width:auto !important;

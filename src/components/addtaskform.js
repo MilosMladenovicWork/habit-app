@@ -12,7 +12,7 @@ function AddTaskForm(props){
 
   const spring = useSpring({
     from:{
-      transform: clickedButton && currentSlide === 0 ? 'translate(-50%, 0) scale(0)' : 'translate(-50%, 0) scale(1)'
+      transform: clickedButton && currentSlide === 0 ? 'translate(-50%, 0) scale(1)' : 'translate(-50%, 0) scale(0)'
     },
     to:{
     transform:clickedButton && currentSlide === 0 ? 'translate(-50%, 0) scale(1)' : 'translate(-50%, 0) scale(0)'
